@@ -4,7 +4,7 @@ package mathjax
 // https://github.com/litao91/goldmark-mathjax
 
 import (
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/xlog"
 	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/parser"
 	"github.com/yuin/goldmark/text"

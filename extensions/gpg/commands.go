@@ -6,7 +6,7 @@ import (
 	"net/url"
 	"path"
 
-	"github.com/emad-elsaid/xlog"
+	"github.com/m4salah/xlog"
 )
 
 const decryptableExt = ".pgp"

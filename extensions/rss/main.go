@@ -9,7 +9,7 @@ import (
 	"sort"
 	"time"
 
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/xlog"
 )
 
 var domain string

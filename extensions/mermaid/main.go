@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"html/template"
 
-	. "github.com/emad-elsaid/xlog"
-	shortcode "github.com/emad-elsaid/xlog/extensions/shortcode"
+	. "github.com/m4salah/xlog"
+	shortcode "github.com/m4salah/xlog/extensions/shortcode"
 )
 
 func init() {

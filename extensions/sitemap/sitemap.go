@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/url"
 
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/xlog"
 )
 
 var SITEMAP_DOMAIN string

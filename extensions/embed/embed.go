@@ -5,8 +5,8 @@ import (
 	"html/template"
 	"strings"
 
-	"github.com/emad-elsaid/xlog"
-	"github.com/emad-elsaid/xlog/extensions/shortcode"
+	"github.com/m4salah/xlog"
+	"github.com/m4salah/xlog/extensions/shortcode"
 )
 
 func init() {

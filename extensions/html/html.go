@@ -15,7 +15,7 @@ import (
 
 	"github.com/yuin/goldmark/ast"
 
-	"github.com/emad-elsaid/xlog"
+	"github.com/m4salah/xlog"
 )
 
 var SUPPORTED_EXT = []string{".htm", ".html", ".xhtml"}

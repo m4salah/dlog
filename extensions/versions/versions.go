@@ -7,7 +7,7 @@ import (
 	"path"
 	"regexp"
 
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/xlog"
 )
 
 func init() {

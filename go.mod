@@ -1,4 +1,4 @@
-module github.com/emad-elsaid/xlog
+module github.com/m4salah/xlog
 
 go 1.20
 

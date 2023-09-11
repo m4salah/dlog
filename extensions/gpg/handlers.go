@@ -3,7 +3,7 @@ package gpg
 import (
 	"errors"
 
-	"github.com/emad-elsaid/xlog"
+	"github.com/m4salah/xlog"
 )
 
 var (

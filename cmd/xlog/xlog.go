@@ -2,10 +2,10 @@ package main
 
 import (
 	// Core
-	"github.com/emad-elsaid/xlog"
+	"github.com/m4salah/xlog"
 
 	// All official extensions
-	_ "github.com/emad-elsaid/xlog/extensions/all"
+	_ "github.com/m4salah/xlog/extensions/all"
 )
 
 func main() {

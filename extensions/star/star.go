@@ -9,7 +9,7 @@ import (
 
 	_ "embed"
 
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/xlog"
 )
 
 const STARRED_PAGES = "starred"

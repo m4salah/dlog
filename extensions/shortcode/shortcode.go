@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"html/template"
 
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/xlog"
 )
 
 type ShortCodeFunc func(Markdown) template.HTML

@@ -1,6 +1,6 @@
 package shortcode
 
-import . "github.com/emad-elsaid/xlog"
+import . "github.com/m4salah/xlog"
 
 func init() {
 	RegisterAutocomplete(autocomplete(0))
