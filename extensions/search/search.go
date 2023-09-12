@@ -8,7 +8,7 @@ import (
 
 	_ "embed"
 
-	. "github.com/m4salah/xlog"
+	. "github.com/emad-elsaid/xlog"
 )
 
 const MIN_SEARCH_KEYWORD = 3

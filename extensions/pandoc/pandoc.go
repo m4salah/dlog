@@ -17,7 +17,7 @@ import (
 
 	"github.com/yuin/goldmark/ast"
 
-	"github.com/m4salah/xlog"
+	"github.com/emad-elsaid/xlog"
 )
 
 var SUPPORTED_EXT = []string{".org", ".rst", ".rtf", ".odt"}

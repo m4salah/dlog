@@ -5,8 +5,8 @@ import (
 	"html/template"
 	"testing"
 
-	"github.com/m4salah/xlog"
-	"github.com/m4salah/xlog/extensions/shortcode"
+	"github.com/emad-elsaid/xlog"
+	"github.com/emad-elsaid/xlog/extensions/shortcode"
 )
 
 func TestShortCode(t *testing.T) {

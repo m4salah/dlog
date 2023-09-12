@@ -3,7 +3,7 @@ package autolink_pages
 import (
 	"strings"
 
-	. "github.com/m4salah/xlog"
+	. "github.com/emad-elsaid/xlog"
 	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/parser"
 	"github.com/yuin/goldmark/text"

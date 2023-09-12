@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/m4salah/xlog"
+	"github.com/emad-elsaid/xlog"
 	emojiAst "github.com/yuin/goldmark-emoji/ast"
 	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/text"

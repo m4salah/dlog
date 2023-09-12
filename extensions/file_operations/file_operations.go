@@ -10,7 +10,7 @@ import (
 
 	_ "embed"
 
-	. "github.com/m4salah/xlog"
+	. "github.com/emad-elsaid/xlog"
 )
 
 //go:embed templates

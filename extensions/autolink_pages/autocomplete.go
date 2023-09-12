@@ -3,7 +3,7 @@ package autolink_pages
 import (
 	"context"
 
-	. "github.com/m4salah/xlog"
+	. "github.com/emad-elsaid/xlog"
 )
 
 func init() {

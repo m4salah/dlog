@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"time"
 
-	. "github.com/m4salah/xlog"
+	. "github.com/emad-elsaid/xlog"
 )
 
 var domain string

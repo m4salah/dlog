@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"html/template"
 
-	. "github.com/m4salah/xlog"
+	. "github.com/emad-elsaid/xlog"
 )
 
 const tmpl = `

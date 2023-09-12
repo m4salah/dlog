@@ -8,7 +8,7 @@ import (
 
 	_ "embed"
 
-	. "github.com/m4salah/xlog"
+	. "github.com/emad-elsaid/xlog"
 	"github.com/yuin/goldmark/ast"
 	east "github.com/yuin/goldmark/extension/ast"
 )
