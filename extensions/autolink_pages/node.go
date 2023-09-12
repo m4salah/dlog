@@ -1,7 +1,7 @@
 package autolink_pages
 
 import (
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/dlog"
 	"github.com/yuin/goldmark/ast"
 )
 

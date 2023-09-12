@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"embed"
 
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/dlog"
 	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/renderer"
 	"github.com/yuin/goldmark/util"

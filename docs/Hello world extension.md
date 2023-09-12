@@ -2,15 +2,15 @@ By the end of this tutorial you'll learn:
 
 * Creating a new extension
 * Creating a custom installation that loads the core and your extension
-* Using xlog public API to manipulate the page before processing
+* Using dlog public API to manipulate the page before processing
 
 # What are we creating
 
-We will create a new Xlog extension that adds "Hello World!" before the page text.
+We will create a new dlog extension that adds "Hello World!" before the page text.
 
 # Creating an extension
 
-Xlog extensions are Go modules (check extensions for more details). So make sure Go toolchain is installed on your system.
+dlog extensions are Go modules (check extensions for more details). So make sure Go toolchain is installed on your system.
 
 First create an empty directory and initialize a new go module in it
 
@@ -18,36 +18,36 @@ First create an empty directory and initialize a new go module in it
 mkdir helloworld
 cd helloworld
 go mod init github.com/emad-elsaid/helloworld
-go get github.com/emad-elsaid/xlog
+go get github.com/m4salah/dlog
 ```
 
 Replace the URL to your github account or any other URL where your extension will be hosted. as per Go modules convention.
 
 # Create a custom installation
 
-To test our extension we need a `main` package that loads xlog and your own extension. 
+To test our extension we need a `main` package that loads dlog and your own extension. 
 
-We'll create `cmd/xlog/xlog.go` that acts as custom installation.
+We'll create `cmd/dlog/dlog.go` that acts as custom installation.
 
 ```shell
-mkdir -p cmd/xlog
+mkdir -p cmd/dlog
 ```
 
-Create a file under `cmd/xlog/xlog.go` that has the following content.
+Create a file under `cmd/dlog/dlog.go` that has the following content.
 
 ```go
 package main
 
 import (
 	// Core
-	"github.com/emad-elsaid/xlog"
+	"github.com/m4salah/dlog"
 
 	// Extensions
 	_ "github.com/emad-elsaid/helloworld"
 )
 
 func main() {
-	xlog.Start()
+	dlog.Start()
 }
 ```
 
@@ -63,10 +63,10 @@ package helloworld
 
 # Run your custom installation
 
-Now running `cmd/xlog/xlog.go` will start the xlog core with only your extension loaded. so it's a clean environment that include only the xlog core and no other extensions.
+Now running `cmd/dlog/dlog.go` will start the dlog core with only your extension loaded. so it's a clean environment that include only the dlog core and no other extensions.
 
 ```shell
-go run ./cmd/xlog/xlog.go
+go run ./cmd/dlog/dlog.go
 ```
 
 You should see output similar to the following. And navigating to [http://localhost:3000](http://localhost:3000) should drop you in the editor to create your `index.md` page.
@@ -83,19 +83,19 @@ You should see output similar to the following. And navigating to [http://localh
 2022/11/17 17:13:38 Starting server: 127.0.0.1:3000
 ```
 
-/info From now on any change to any of the Go files will require restarting the xlog server
+/info From now on any change to any of the Go files will require restarting the dlog server
 
 
 # Create your first test page
 
 * Try opening  [http://localhost:3000](http://localhost:3000)
-* Enter any text. for example: "We are creating a Hello world Xlog extension."
+* Enter any text. for example: "We are creating a Hello world dlog extension."
 * Click "Save" or "Ctrl+S"
 * You should see your page rendered in HTML
 
 # Define a Preprocessor
 
-Packages add features to Xlog by calling `Register*` functions in the `init` function of the page. This allow registering a group of types for xlog to use in the appropriate time. Like:
+Packages add features to dlog by calling `Register*` functions in the `init` function of the page. This allow registering a group of types for dlog to use in the appropriate time. Like:
 
 * Preprocessor
 * Autocomplete
@@ -103,7 +103,7 @@ Packages add features to Xlog by calling `Register*` functions in the `init` fun
 
 For our extension we want to add "Hello world!" before the actual page content. this is exactly what the Preprocessor is for. a function that processes the page text before rendering it to HTML. 
 
-We will create a function that implement the [Preprocessor interface](https://pkg.go.dev/github.com/emad-elsaid/xlog#Preprocessor). `helloworld.go` should have the following content.
+We will create a function that implement the [Preprocessor interface](https://pkg.go.dev/github.com/m4salah/dlog#Preprocessor). `helloworld.go` should have the following content.
 
 ```go
 package helloworld
@@ -117,15 +117,15 @@ This is a function that takes the page content as string and return the content 
 
 # The Init function
 
-Now we'll need to register this function as a preprocessor. we'll do this by importing xlog core and use [`RegisterPreprocessor`](https://pkg.go.dev/github.com/emad-elsaid/xlog#RegisterPreprocessor).
+Now we'll need to register this function as a preprocessor. we'll do this by importing dlog core and use [`RegisterPreprocessor`](https://pkg.go.dev/github.com/m4salah/dlog#RegisterPreprocessor).
 
 ```go
 package helloworld
 
-import "github.com/emad-elsaid/xlog"
+import "github.com/m4salah/dlog"
 
 func init() {
-	xlog.RegisterPreprocessor(addHelloWorld)
+	dlog.RegisterPreprocessor(addHelloWorld)
 }
 
 func addHelloWorld(input string) string {
@@ -137,12 +137,12 @@ Restarting the server and refreshing your web page will show the following:
 
 ```
 Hello world!
-We are creating a Hello world Xlog extension.
+We are creating a Hello world dlog extension.
 ```
 
 # Success
 
-Congrates, You created a new xlog extension. Now you can publish this extension to github and import it in any custom installation of xlog.
+Congrates, You created a new dlog extension. Now you can publish this extension to github and import it in any custom installation of dlog.
 
-Also you may try to explore Xlog package documentation to get familiar with other types and `Register` functions.
+Also you may try to explore dlog package documentation to get familiar with other types and `Register` functions.
 

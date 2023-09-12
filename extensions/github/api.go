@@ -8,9 +8,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/emad-elsaid/xlog"
-	"github.com/emad-elsaid/xlog/extensions/shortcode"
 	"github.com/google/go-github/v53/github"
+	"github.com/m4salah/dlog"
+	"github.com/m4salah/dlog/extensions/shortcode"
 	"golang.org/x/oauth2"
 )
 
@@ -22,7 +22,7 @@ func init() {
 	shortcode.ShortCode("github-search-issues", seachIssuesShortcode)
 }
 
-func seachIssuesShortcode(in xlog.Markdown) template.HTML {
+func seachIssuesShortcode(in dlog.Markdown) template.HTML {
 	return template.HTML(issues(context.Background(), string(in)))
 }
 

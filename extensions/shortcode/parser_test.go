@@ -5,8 +5,8 @@ import (
 	"html/template"
 	"testing"
 
-	"github.com/emad-elsaid/xlog"
-	"github.com/emad-elsaid/xlog/extensions/shortcode"
+	"github.com/m4salah/dlog"
+	"github.com/m4salah/dlog/extensions/shortcode"
 )
 
 func TestShortCode(t *testing.T) {
@@ -56,11 +56,11 @@ func TestShortCode(t *testing.T) {
 
 	for _, tc := range tcs {
 		t.Run(tc.name, func(t *testing.T) {
-			handler := func(xlog.Markdown) template.HTML { return template.HTML(tc.handlerOutput) }
+			handler := func(dlog.Markdown) template.HTML { return template.HTML(tc.handlerOutput) }
 			shortcode.ShortCode("test", handler)
 
 			output := bytes.NewBufferString("")
-			xlog.MarkDownRenderer.Convert([]byte(tc.input), output)
+			dlog.MarkDownRenderer.Convert([]byte(tc.input), output)
 			if output.String() != tc.output {
 				t.Errorf("input: %s\nexpected: %s\noutput: %s", tc.input, tc.output, output.String())
 			}

@@ -1,7 +1,7 @@
 ```
-xlog --help
+dlog --help
 
-Usage of xlog:
+Usage of dlog:
   -activitypub.domain string
         domain used for activitypub stream absolute URLs
   -activitypub.icon string
@@ -19,7 +19,7 @@ Usage of xlog:
   -custom_css string
         Custom CSS file path
   -disqus string
-        Disqus domain name for example: xlog-emadelsaid.disqus.com
+        Disqus domain name for example: dlog-emadelsaid.disqus.com
   -github.branch string
         Github repository branch to use for 'edit on Github' quick action (default "master")
   -github.repo string
@@ -35,7 +35,7 @@ Usage of xlog:
   -pandoc
         Use pandoc to render .org, .rst, .rtf, .odt
   -readonly
-        Should xlog hide write operations, read-only means all write operations will be disabled
+        Should dlog hide write operations, read-only means all write operations will be disabled
   -rss.description string
         RSS feed description
   -rss.domain string
@@ -49,7 +49,7 @@ Usage of xlog:
   -sitemap.domain string
         domain name without protocol or trailing / to use for sitemap loc
   -sitename string
-        Site name is the name that appears on the header beside the logo and in the title tag (default "XLOG")
+        Site name is the name that appears on the header beside the logo and in the title tag (default "dlog")
   -source string
         Directory that will act as a storage (default "/path/to/source")
   -twitter.username string

@@ -1,16 +1,16 @@
-:vhs: Xlog is a static site generator for digital gardening written in Go. It serves markdown files as HTML and allows editing files online. It focuses on enriching markdown files and surfacing implicit links between pages.
+:vhs: dlog is a static site generator for digital gardening written in Go. It serves markdown files as HTML and allows editing files online. It focuses on enriching markdown files and surfacing implicit links between pages.
 
 ![](/public/logo.png)
 
-Xlog is a result of trying to build an offline personal knowledgebase with the ability to autolink pages together automatically. Without depending on proprietary file format or online service.
+dlog is a result of trying to build an offline personal knowledgebase with the ability to autolink pages together automatically. Without depending on proprietary file format or online service.
 
 # :runner: Quick Start
 
 ```shell
-go install github.com/emad-elsaid/xlog/cmd/xlog@latest
+go install github.com/m4salah/dlog/cmd/dlog@latest
 mkdir new-site
 cd new-site
-xlog
+dlog
 # => Now browse to http://localhost:3000
 ```
 
@@ -55,7 +55,7 @@ xlog
 # :book: Documentation
 
 - This website serves as end user documentation and developer entry point for developing extensions
-- There is also a Go package documentation that you can use to understand what xlog expose as public API
+- There is also a Go package documentation that you can use to understand what dlog expose as public API
 
 # :bulb: Tutorials
 
@@ -64,7 +64,7 @@ xlog
 
 # Contributing
 
-You can help Xlog in many ways:
+You can help dlog in many ways:
 
 - Create a new extension
 - Improve the core codebase
@@ -72,11 +72,11 @@ You can help Xlog in many ways:
 
 # :people_holding_hands: Community
 
-- :left_speech_bubble: [Discussing ideas](https://github.com/emad-elsaid/xlog/discussions)
-- :beetle: [Reporting issues](https://github.com/emad-elsaid/xlog/issues)
-- :keyboard: [Contributors](https://github.com/emad-elsaid/xlog/graphs/contributors)
+- :left_speech_bubble: [Discussing ideas](https://github.com/m4salah/dlog/discussions)
+- :beetle: [Reporting issues](https://github.com/m4salah/dlog/issues)
+- :keyboard: [Contributors](https://github.com/m4salah/dlog/graphs/contributors)
 - Github
 
 # License
 
-Xlog is released under MIT license
+dlog is released under MIT license

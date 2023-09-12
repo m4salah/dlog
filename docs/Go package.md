@@ -1,1 +1,1 @@
-Xlog is distributed as Go package that has a CLI that uses the package and all `xlog/extensions`. documentation of the Go package API can be found on https://pkg.go.dev/github.com/emad-elsaid/xlog
+dlog is distributed as Go package that has a CLI that uses the package and all `dlog/extensions`. documentation of the Go package API can be found on https://pkg.go.dev/github.com/m4salah/dlog

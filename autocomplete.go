@@ -1,4 +1,4 @@
-package xlog
+package dlog
 
 // Autocomplete defines what character triggeres the autocomplete feature and
 // what is the list to display in this case.

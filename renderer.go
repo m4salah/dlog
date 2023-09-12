@@ -1,4 +1,4 @@
-package xlog
+package dlog
 
 import (
 	chroma_html "github.com/alecthomas/chroma/v2/formatters/html"

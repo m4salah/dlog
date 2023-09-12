@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"html/template"
 
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/dlog"
 )
 
 const tmpl = `
@@ -30,7 +30,7 @@ const tmpl = `
 var domain string
 
 func init() {
-	flag.StringVar(&domain, "disqus", "", "Disqus domain name for example: xlog-emadelsaid.disqus.com")
+	flag.StringVar(&domain, "disqus", "", "Disqus domain name for example: dlog-emadelsaid.disqus.com")
 	RegisterWidget(AFTER_VIEW_WIDGET, 2, widget)
 }
 

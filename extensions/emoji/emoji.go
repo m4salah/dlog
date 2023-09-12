@@ -4,7 +4,7 @@ import (
 	_ "embed"
 	"encoding/json"
 
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/dlog"
 )
 
 //go:embed emoji.json

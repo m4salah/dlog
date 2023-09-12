@@ -7,8 +7,8 @@ import (
 	"html/template"
 	"strings"
 
-	. "github.com/emad-elsaid/xlog"
-	"github.com/emad-elsaid/xlog/extensions/shortcode"
+	. "github.com/m4salah/dlog"
+	"github.com/m4salah/dlog/extensions/shortcode"
 
 	_ "embed"
 

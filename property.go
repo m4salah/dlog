@@ -1,4 +1,4 @@
-package xlog
+package dlog
 
 func init() {
 	RegisterHelper("properties", Properties)

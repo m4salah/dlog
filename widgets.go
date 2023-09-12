@@ -1,4 +1,4 @@
-package xlog
+package dlog
 
 import (
 	"html/template"

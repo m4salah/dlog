@@ -3,7 +3,7 @@ package todo
 import (
 	"fmt"
 
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/dlog"
 	"github.com/yuin/goldmark/ast"
 	east "github.com/yuin/goldmark/extension/ast"
 	"github.com/yuin/goldmark/renderer"

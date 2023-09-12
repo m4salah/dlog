@@ -1,4 +1,4 @@
-* Xlog doesn't require custom structure for your markdown files
+* dlog doesn't require custom structure for your markdown files
 * Default main file name is `index.md` and can be overriden with `--index` flag
 
 # Create empty directory
@@ -10,12 +10,12 @@ mkdir myblog
 cd myblog
 ```
 
-# Run Xlog
+# Run dlog
 
-Assuming you already went through one of the Installation methods. `xlog` should be in your **PATH**. Simply executing it in current directory starts an HTTP server on port 3000
+Assuming you already went through one of the Installation methods. `dlog` should be in your **PATH**. Simply executing it in current directory starts an HTTP server on port 3000
 
 ```shell
-xlog
+dlog
 ```
 
 # Running on a different port
@@ -23,17 +23,17 @@ xlog
 The previous command starts a server on port **3000** if you want to specify the port you can do so using `--bind` flag
 
 ```shell
-xlog --bind 127.0.0.1:4000
+dlog --bind 127.0.0.1:4000
 ```
 
 This will run the server on port **4000** instead of **3000** 
 
 # Using a different index page
 
-Xlog assumes the main page is **index.md** if you're working in an existing github repository for example you may need to specify **README.md** as your index page as follows
+dlog assumes the main page is **index.md** if you're working in an existing github repository for example you may need to specify **README.md** as your index page as follows
 
 ```shell
-xlog --index README
+dlog --index README
 ```
 
 Notice that specifying the index page doesn't need the extension `.md`.
@@ -49,7 +49,7 @@ Note that pressing `Ctrl+S` will save the page if you're in the edit page. and a
 You can generate HTML files from your markdown files using `--build` flag
 
 ```shell
-xlog --build .
+dlog --build .
 ```
 
 Which will convert all of your markdown files to HTML files in the current directory. 
@@ -57,12 +57,12 @@ Which will convert all of your markdown files to HTML files in the current direc
 You can specify a destination for the HTML output.
 
 ```shell
-xlog --build /destination/directory/path
+dlog --build /destination/directory/path
 ```
 
 # Integration with Github pages
 
-If your markdown is hosted as Gituhub repository. You can use github workflows to download and execute xlog to generate HTML pages and host it with github pages. examples can be found here:
+If your markdown is hosted as Gituhub repository. You can use github workflows to download and execute dlog to generate HTML pages and host it with github pages. examples can be found here:
 
-- [Emad Elsaid Blog](https://github.com/emad-elsaid/emad-elsaid.github.io/blob/master/.github/workflows/xlog.yml)
-- [Xlog documentation](https://github.com/emad-elsaid/xlog/blob/master/.github/workflows/xlog.yml)
+- [Emad Elsaid Blog](https://github.com/emad-elsaid/emad-elsaid.github.io/blob/master/.github/workflows/dlog.yml)
+- [dlog documentation](https://github.com/m4salah/dlog/blob/master/.github/workflows/dlog.yml)

@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/emad-elsaid/xlog"
+	"github.com/m4salah/dlog"
 	emojiAst "github.com/yuin/goldmark-emoji/ast"
 	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/text"
@@ -32,23 +32,23 @@ func (p *page) Exists() bool {
 
 func (p *page) Render() template.HTML {
 	content := p.Content()
-	content = xlog.PreProcess(content)
+	content = dlog.PreProcess(content)
 	var buf bytes.Buffer
-	if err := xlog.MarkDownRenderer.Convert([]byte(content), &buf); err != nil {
+	if err := dlog.MarkDownRenderer.Convert([]byte(content), &buf); err != nil {
 		return template.HTML(err.Error())
 	}
 
 	return template.HTML(buf.String())
 }
 
-func (p *page) Content() xlog.Markdown {
+func (p *page) Content() dlog.Markdown {
 	cmd := exec.Command("gpg", "--decrypt", p.FileName())
 	out, err := cmd.Output()
 	if err != nil {
 		log.Printf("Coudln't decrypt file: %s, err: %s", p.FileName(), err.Error())
 	}
 
-	return xlog.Markdown(out)
+	return dlog.Markdown(out)
 }
 
 func (p *page) ModTime() time.Time {
@@ -61,7 +61,7 @@ func (p *page) ModTime() time.Time {
 }
 
 func (p *page) Delete() bool {
-	defer xlog.Trigger(xlog.AfterDelete, p)
+	defer dlog.Trigger(dlog.AfterDelete, p)
 
 	if p.Exists() {
 		err := os.Remove(p.FileName())
@@ -73,14 +73,14 @@ func (p *page) Delete() bool {
 	return true
 }
 
-func (p *page) Write(content xlog.Markdown) bool {
-	xlog.Trigger(xlog.BeforeWrite, p)
-	defer xlog.Trigger(xlog.AfterWrite, p)
+func (p *page) Write(content dlog.Markdown) bool {
+	dlog.Trigger(dlog.BeforeWrite, p)
+	defer dlog.Trigger(dlog.AfterWrite, p)
 
 	name := p.FileName()
 	os.MkdirAll(filepath.Dir(name), 0700)
 
-	content = xlog.Markdown(strings.ReplaceAll(string(content), "\r\n", "\n"))
+	content = dlog.Markdown(strings.ReplaceAll(string(content), "\r\n", "\n"))
 	cmd := exec.Command("gpg", "-r", gpgId, "--output", p.FileName(), "--batch", "--yes", "--encrypt")
 	cmd.Stdin = bytes.NewBuffer([]byte(content))
 
@@ -95,13 +95,13 @@ func (p *page) Write(content xlog.Markdown) bool {
 
 func (p *page) AST() ast.Node {
 	if p.ast == nil {
-		p.ast = xlog.MarkDownRenderer.Parser().Parse(text.NewReader([]byte(p.Content())))
+		p.ast = dlog.MarkDownRenderer.Parser().Parse(text.NewReader([]byte(p.Content())))
 	}
 
 	return p.ast
 }
 func (p *page) Emoji() string {
-	if e, ok := xlog.FindInAST[*emojiAst.Emoji](p.AST()); ok {
+	if e, ok := dlog.FindInAST[*emojiAst.Emoji](p.AST()); ok {
 		return string(e.Value.Unicode)
 	}
 

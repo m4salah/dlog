@@ -1,4 +1,4 @@
-package xlog
+package dlog
 
 import (
 	"context"
@@ -14,7 +14,7 @@ import (
 	"github.com/gorilla/csrf"
 )
 
-const xCSRF_COOKIE_NAME = "xlog_csrf"
+const xCSRF_COOKIE_NAME = "dlog_csrf"
 
 var (
 	bindAddress   string

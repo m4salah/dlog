@@ -3,7 +3,7 @@ package gpg
 import (
 	"errors"
 
-	"github.com/emad-elsaid/xlog"
+	"github.com/m4salah/dlog"
 )
 
 var (
@@ -11,49 +11,49 @@ var (
 	encryptionFailedErr = errors.New("Couldn't encrypt page")
 )
 
-func encryptHandler(w xlog.Response, r xlog.Request) xlog.Output {
-	if xlog.READONLY {
-		return xlog.Unauthorized("read only mode")
+func encryptHandler(w dlog.Response, r dlog.Request) dlog.Output {
+	if dlog.READONLY {
+		return dlog.Unauthorized("read only mode")
 	}
 
-	vars := xlog.Vars(r)
-	p := xlog.NewPage(vars["page"])
+	vars := dlog.Vars(r)
+	p := dlog.NewPage(vars["page"])
 	if !p.Exists() {
-		return xlog.NotFound("page not found")
+		return dlog.NotFound("page not found")
 	}
 
 	encryptedPage := page{name: p.Name()}
 	if !encryptedPage.Write(p.Content()) {
-		return xlog.InternalServerError(encryptionFailedErr)
+		return dlog.InternalServerError(encryptionFailedErr)
 	}
 
 	if !p.Delete() {
-		return xlog.InternalServerError(deleteFailedErr)
+		return dlog.InternalServerError(deleteFailedErr)
 	}
 
-	return xlog.NoContent()
+	return dlog.NoContent()
 }
 
-func decryptHandler(w xlog.Response, r xlog.Request) xlog.Output {
-	if xlog.READONLY {
-		return xlog.Unauthorized("read only mode")
+func decryptHandler(w dlog.Response, r dlog.Request) dlog.Output {
+	if dlog.READONLY {
+		return dlog.Unauthorized("read only mode")
 	}
 
-	vars := xlog.Vars(r)
-	p := xlog.NewPage(vars["page"])
+	vars := dlog.Vars(r)
+	p := dlog.NewPage(vars["page"])
 	if !p.Exists() {
-		return xlog.NotFound("page not found")
+		return dlog.NotFound("page not found")
 	}
 
 	content := p.Content()
 	if !p.Delete() {
-		return xlog.InternalServerError(deleteFailedErr)
+		return dlog.InternalServerError(deleteFailedErr)
 	}
 
-	decryptedPage := xlog.NewPage(p.Name())
+	decryptedPage := dlog.NewPage(p.Name())
 	if !decryptedPage.Write(content) {
-		return xlog.InternalServerError(encryptionFailedErr)
+		return dlog.InternalServerError(encryptionFailedErr)
 	}
 
-	return xlog.NoContent()
+	return dlog.NoContent()
 }

@@ -6,29 +6,29 @@ import (
 	"net/url"
 	"path"
 
-	"github.com/emad-elsaid/xlog"
+	"github.com/m4salah/dlog"
 )
 
 const decryptableExt = ".pgp"
 
-func quickCommands(p xlog.Page) []xlog.Command {
+func quickCommands(p dlog.Page) []dlog.Command {
 	if len(gpgId) == 0 {
 		return nil
 	}
 
 	if path.Ext(p.FileName()) == decryptableExt {
-		return []xlog.Command{
+		return []dlog.Command{
 			&decryptCommand{page: p},
 		}
 	} else {
-		return []xlog.Command{
+		return []dlog.Command{
 			&encryptCommand{page: p},
 		}
 	}
 }
 
 type encryptCommand struct {
-	page xlog.Page
+	page dlog.Page
 }
 
 func (e *encryptCommand) Icon() string         { return "fa-solid fa-lock" }
@@ -55,7 +55,7 @@ func (e *encryptCommand) Widget() template.HTML {
 }
 
 type decryptCommand struct {
-	page xlog.Page
+	page dlog.Page
 }
 
 func (e *decryptCommand) Icon() string         { return "fa-solid fa-lock-open has-text-danger" }

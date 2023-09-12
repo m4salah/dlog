@@ -62,7 +62,7 @@ $$
 
 ## Auto-convert image URL to an image
 
-https://xlog.emadelsaid.com/public/logo.png
+https://dlog.emadelsaid.com/public/logo.png
 
 ## Preview URL if in a line
 

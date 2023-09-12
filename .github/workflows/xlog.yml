@@ -1,8 +1,8 @@
-name: Xlog
+name: dlog
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -39,23 +39,22 @@ jobs:
 
       - name: Build
         run: |
-          go run ./cmd/xlog \
+          go run ./cmd/dlog \
           --source docs \
           --build .. \
-          --sitename "Xlog" \
+          --sitename "dlog" \
           --sidebar=false \
           --html=true \
-          --sitemap.domain=xlog.emadelsaid.com \
-          --rss.domain xlog.emadelsaid.com \
-          --activitypub.domain=xlog.emadelsaid.com \
+          --sitemap.domain=dlog.emadelsaid.com \
+          --rss.domain dlog.emadelsaid.com \
+          --activitypub.domain=dlog.emadelsaid.com \
           --activitypub.username=app \
-          --activitypub.summary="Xlog is a static site generator for digital gardening written in Go. It serves markdown files as HTML and allows editing files online. It focuses on enriching markdown files and surfacing implicit links between pages." \
-          --og.domain xlog.emadelsaid.com \
-          --github.url https://github.com/emad-elsaid/xlog/edit/master/docs
+          --activitypub.summary="dlog is a static site generator for digital gardening written in Go. It serves markdown files as HTML and allows editing files online. It focuses on enriching markdown files and surfacing implicit links between pages." \
+          --og.domain dlog.emadelsaid.com \
+          --github.url https://github.com/m4salah/dlog/edit/master/docs
           mv docs/* .
           rm *.md
           chmod -R 0777 .
-
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v1.0.4

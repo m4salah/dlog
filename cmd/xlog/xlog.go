@@ -2,12 +2,12 @@ package main
 
 import (
 	// Core
-	"github.com/emad-elsaid/xlog"
+	"github.com/m4salah/dlog"
 
 	// All official extensions
-	_ "github.com/emad-elsaid/xlog/extensions/all"
+	_ "github.com/m4salah/dlog/extensions/all"
 )
 
 func main() {
-	xlog.Start()
+	dlog.Start()
 }

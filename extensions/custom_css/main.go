@@ -4,7 +4,7 @@ import (
 	"flag"
 	"html/template"
 
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/dlog"
 )
 
 var custom_css_file string

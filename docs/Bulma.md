@@ -1,4 +1,4 @@
-A CSS only framework. used to provide a basic look for xlog.
+A CSS only framework. used to provide a basic look for dlog.
 
 https://bulma.io/
 

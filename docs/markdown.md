@@ -1,1 +1,1 @@
-Xlog uses CommonMark syntax as it has more strict definition of the syntax. and goldmark parser implementation was the best extensible implementation so far.
+dlog uses CommonMark syntax as it has more strict definition of the syntax. and goldmark parser implementation was the best extensible implementation so far.

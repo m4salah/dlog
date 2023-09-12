@@ -1,4 +1,4 @@
-Xlog extension **shortcode** includes couple default blocks
+dlog extension **shortcode** includes couple default blocks
 
 # /alert
 

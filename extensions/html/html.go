@@ -15,7 +15,7 @@ import (
 
 	"github.com/yuin/goldmark/ast"
 
-	"github.com/emad-elsaid/xlog"
+	"github.com/m4salah/dlog"
 )
 
 var SUPPORTED_EXT = []string{".htm", ".html", ".xhtml"}
@@ -23,12 +23,12 @@ var html_support bool
 
 func init() {
 	flag.BoolVar(&html_support, "html", false, "Consider HTML files as pages")
-	xlog.RegisterPageSource(new(htmlSource))
+	dlog.RegisterPageSource(new(htmlSource))
 }
 
 type htmlSource struct{}
 
-func (p *htmlSource) Page(name string) xlog.Page {
+func (p *htmlSource) Page(name string) dlog.Page {
 	if !html_support {
 		return nil
 	}
@@ -46,7 +46,7 @@ func (p *htmlSource) Page(name string) xlog.Page {
 	return nil
 }
 
-func (p *htmlSource) Each(ctx context.Context, f func(xlog.Page)) {
+func (p *htmlSource) Each(ctx context.Context, f func(dlog.Page)) {
 	if !html_support {
 		return
 	}
@@ -99,12 +99,12 @@ func (p *page) Render() template.HTML {
 	return template.HTML(p.Content())
 }
 
-func (p *page) Content() xlog.Markdown {
+func (p *page) Content() dlog.Markdown {
 	dat, err := os.ReadFile(p.FileName())
 	if err != nil {
 		return ""
 	}
-	return xlog.Markdown(dat)
+	return dlog.Markdown(dat)
 }
 
 func (p *page) ModTime() time.Time {
@@ -117,7 +117,7 @@ func (p *page) ModTime() time.Time {
 }
 
 func (p *page) Delete() bool {
-	defer xlog.Trigger(xlog.AfterDelete, p)
+	defer dlog.Trigger(dlog.AfterDelete, p)
 
 	if p.Exists() {
 		err := os.Remove(p.FileName())
@@ -129,14 +129,14 @@ func (p *page) Delete() bool {
 	return true
 }
 
-func (p *page) Write(content xlog.Markdown) bool {
-	xlog.Trigger(xlog.BeforeWrite, p)
-	defer xlog.Trigger(xlog.AfterWrite, p)
+func (p *page) Write(content dlog.Markdown) bool {
+	dlog.Trigger(dlog.BeforeWrite, p)
+	defer dlog.Trigger(dlog.AfterWrite, p)
 
 	name := p.FileName()
 	os.MkdirAll(filepath.Dir(name), 0700)
 
-	content = xlog.Markdown(strings.ReplaceAll(string(content), "\r\n", "\n"))
+	content = dlog.Markdown(strings.ReplaceAll(string(content), "\r\n", "\n"))
 	if err := os.WriteFile(name, []byte(content), 0644); err != nil {
 		fmt.Printf("Can't write `%s`, err: %s\n", p.Name(), err)
 		return false

@@ -1,4 +1,4 @@
-Xlog is built to be small core that offers small set of features. And focus on offering a developer friendly public API to allow extending it with more features.
+dlog is built to be small core that offers small set of features. And focus on offering a developer friendly public API to allow extending it with more features.
 
 # Extension points
 
@@ -19,12 +19,12 @@ Xlog is built to be small core that offers small set of features. And focus on o
 
 An extension is a 
 
-* Go module/package that imports xlog package
+* Go module/package that imports dlog package
 * Can be hosted anywhere
 *  Has an `init` function
 *  Uses `Register*` functions in the `init` function (checkout Go package documentation)
-*  Adds or improves a feature in xlog using one or more of the extension points.
-*  Imported by a the `main` package of your knowledgebase along with all other extensions and Xlog itself. an example can be found in Xlog CLI
+*  Adds or improves a feature in dlog using one or more of the extension points.
+*  Imported by a the `main` package of your knowledgebase along with all other extensions and dlog itself. an example can be found in dlog CLI
 
 # Creating extensions
 

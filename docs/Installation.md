@@ -1,42 +1,42 @@
 # Download latest binary
 
-Github has a release for each xlog version tag. it has binaries built for (Windows, Linux, MacOS) for several architectures. you can download the latest version from this page: https://github.com/emad-elsaid/xlog/releases/latest
+Github has a release for each dlog version tag. it has binaries built for (Windows, Linux, MacOS) for several architectures. you can download the latest version from this page: https://github.com/m4salah/dlog/releases/latest
 
 # Using Go
 
 ```bash
-go install github.com/emad-elsaid/xlog/cmd/xlog@latest
+go install github.com/m4salah/dlog/cmd/dlog@latest
 ```
 
 # From source
 
 ```bash
-git clone git@github.com:emad-elsaid/xlog.git
-cd xlog
-go run ./cmd/xlog # to run it
-go install ./cmd/xlog # to install it to Go bin.
+git clone git@github.com:emad-elsaid/dlog.git
+cd dlog
+go run ./cmd/dlog # to run it
+go install ./cmd/dlog # to install it to Go bin.
 ```
 
 # Arch Linux (AUR)
 
-* Xlog is published to AUR: https://aur.archlinux.org/packages/xlog-git
+* dlog is published to AUR: https://aur.archlinux.org/packages/dlog-git
 * Using `yay` for example:
 
 ```bash
-yay -S xlog-git
+yay -S dlog-git
 ```
 
 # From source with docker-compose
 
 ```bash
-git clone git@github.com:emad-elsaid/xlog.git
-cd xlog
+git clone git@github.com:emad-elsaid/dlog.git
+cd dlog
 docker-composer build
 docker-composer run
 ```
 
 ```info
-Xlog container attach `~/.xlog` as a volume and will write pages to it.
+dlog container attach `~/.dlog` as a volume and will write pages to it.
 ```
 
 # Docker
@@ -44,6 +44,6 @@ Xlog container attach `~/.xlog` as a volume and will write pages to it.
 Releases are packaged as docker images and pushed to GitHub 
 
 ```bash
-docker pull ghcr.io/emad-elsaid/xlog:latest
-docker run -p 3000:3000 -v ~/.xlog:/files ghcr.io/emad-elsaid/xlog:latest
+docker pull ghcr.io/emad-elsaid/dlog:latest
+docker run -p 3000:3000 -v ~/.dlog:/files ghcr.io/emad-elsaid/dlog:latest
 ```

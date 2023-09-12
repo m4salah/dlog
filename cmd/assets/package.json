@@ -1,8 +1,8 @@
 {
-  "name": "xlog",
+  "name": "dlog",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/emad-elsaid/xlog.git",
+  "repository": "https://github.com/m4salah/dlog.git",
   "author": "Emad Elsaid <emad.elsaid.hamed@gmail.com>",
   "license": "MIT",
   "scripts": {

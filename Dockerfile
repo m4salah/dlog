@@ -5,10 +5,10 @@ COPY go.mod ./
 COPY go.sum ./
 RUN go mod download
 COPY ./ ./
-RUN go build -o xlog ./cmd/xlog
+RUN go build -o dlog ./cmd/dlog
 
 FROM alpine as final
-COPY --from=builder /app/xlog /app/xlog
+COPY --from=builder /app/dlog /app/dlog
 
-ENTRYPOINT ["/app/xlog"]
+ENTRYPOINT ["/app/dlog"]
 CMD ["-bind", "0.0.0.0:3000", "-source", "/files"]

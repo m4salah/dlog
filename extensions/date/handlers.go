@@ -4,7 +4,7 @@ import (
 	"embed"
 	"time"
 
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/dlog"
 )
 
 //go:embed templates

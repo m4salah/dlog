@@ -1,4 +1,4 @@
-Defined under `/extensions` sub package. each extension is a subpackage. **All extensions are imported** by default in `cmd/xlog/xlog.go`.
+Defined under `/extensions` sub package. each extension is a subpackage. **All extensions are imported** by default in `cmd/dlog/dlog.go`.
 
 
 | Extension       | Description                                                                             |

@@ -7,12 +7,12 @@ import (
 	"path"
 	"path/filepath"
 
-	"github.com/emad-elsaid/xlog"
+	"github.com/m4salah/dlog"
 )
 
 type encryptedPages struct{}
 
-func (p *encryptedPages) Page(name string) xlog.Page {
+func (p *encryptedPages) Page(name string) dlog.Page {
 	if len(gpgId) == 0 {
 		return nil
 	}
@@ -27,7 +27,7 @@ func (p *encryptedPages) Page(name string) xlog.Page {
 	return nil
 }
 
-func (p *encryptedPages) Each(ctx context.Context, f func(xlog.Page)) {
+func (p *encryptedPages) Each(ctx context.Context, f func(dlog.Page)) {
 	if len(gpgId) == 0 {
 		return
 	}

@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strconv"
 
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/dlog"
 )
 
 func init() {

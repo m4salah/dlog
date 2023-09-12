@@ -1,4 +1,4 @@
-package xlog
+package dlog
 
 // A Preprocessor is a function that takes the whole page content and returns a
 // modified version of the content. extensions should define this type and

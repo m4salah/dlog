@@ -1,4 +1,4 @@
-package xlog
+package dlog
 
 type priorityItem[T any] struct {
 	priority float32

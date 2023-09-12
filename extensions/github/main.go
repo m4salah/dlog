@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"html/template"
 
-	. "github.com/emad-elsaid/xlog"
+	. "github.com/m4salah/dlog"
 )
 
 var editUrl string
@@ -13,8 +13,8 @@ var repo string
 var branch string
 
 func init() {
-	flag.StringVar(&editUrl, "github.url", "", "Repository url for 'edit on Github' quick action e.g https://github.com/emad-elsaid/xlog/edit/master/docs")
-	flag.StringVar(&repo, "github.repo", "", "[Deprecated] Github repository to use for 'edit on Github' quick action e.g https://github.com/emad-elsaid/xlog")
+	flag.StringVar(&editUrl, "github.url", "", "Repository url for 'edit on Github' quick action e.g https://github.com/m4salah/dlog/edit/master/docs")
+	flag.StringVar(&repo, "github.repo", "", "[Deprecated] Github repository to use for 'edit on Github' quick action e.g https://github.com/m4salah/dlog")
 	flag.StringVar(&branch, "github.branch", "master", "[Deprecated] Github repository branch to use for 'edit on Github' quick action")
 	RegisterQuickCommand(quickCommands)
 }
