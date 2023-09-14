@@ -1,741 +1,1852 @@
 /* Tailwind classes */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+/* ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com */
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+*/
+
+html {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-feature-settings: inherit;
+  /* 1 */
+  font-variation-settings: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 5% 64.9%;
+  --radius: 0.5rem;
+}
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mt-0 {
+  margin-top: 0px;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-screen-lg {
+  max-width: 1024px;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
+.list-none {
+  list-style-type: none;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.divide-x > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-x-reverse: 0;
+  border-right-width: calc(1px * var(--tw-divide-x-reverse));
+  border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
+}
+
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+
+.divide-y-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 1;
+}
+
+.divide-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-x-reverse: 1;
+}
+
+.divide-solid > :not([hidden]) ~ :not([hidden]) {
+  border-style: solid;
+}
+
+.divide-dotted > :not([hidden]) ~ :not([hidden]) {
+  border-style: dotted;
+}
+
+.divide-double > :not([hidden]) ~ :not([hidden]) {
+  border-style: double;
+}
+
+.divide-red-50 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(254 242 242 / var(--tw-divide-opacity));
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-inherit {
+  color: inherit;
+}
+
+.text-primary {
+  color: hsl(var(--primary));
+}
+
+.outline {
+  outline-style: solid;
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 
 /* inter-cyrillic-ext-100-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 100;
+
   src: url(assets/inter-cyrillic-ext-100-normal.woff2) format("woff2"),
     url(assets/inter-all-100-normal.woff) format("woff");
+
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
     U+FE2E-FE2F;
 }
 
 /* inter-cyrillic-100-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 100;
+
   src: url(assets/inter-cyrillic-100-normal.woff2) format("woff2"),
     url(assets/inter-all-100-normal.woff) format("woff");
+
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* inter-greek-ext-100-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 100;
+
   src: url(assets/inter-greek-ext-100-normal.woff2) format("woff2"),
     url(assets/inter-all-100-normal.woff) format("woff");
+
   unicode-range: U+1F00-1FFF;
 }
 
 /* inter-greek-100-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 100;
+
   src: url(assets/inter-greek-100-normal.woff2) format("woff2"),
     url(assets/inter-all-100-normal.woff) format("woff");
+
   unicode-range: U+0370-03FF;
 }
 
 /* inter-vietnamese-100-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 100;
+
   src: url(assets/inter-vietnamese-100-normal.woff2) format("woff2"),
     url(assets/inter-all-100-normal.woff) format("woff");
+
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
     U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
 
 /* inter-latin-ext-100-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 100;
+
   src: url(assets/inter-latin-ext-100-normal.woff2) format("woff2"),
     url(assets/inter-all-100-normal.woff) format("woff");
+
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
     U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* inter-latin-100-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 100;
+
   src: url(assets/inter-latin-100-normal.woff2) format("woff2"),
     url(assets/inter-all-100-normal.woff) format("woff");
+
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
 
 /* inter-cyrillic-ext-200-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 200;
+
   src: url(assets/inter-cyrillic-ext-200-normal.woff2) format("woff2"),
     url(assets/inter-all-200-normal.woff) format("woff");
+
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
     U+FE2E-FE2F;
 }
 
 /* inter-cyrillic-200-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 200;
+
   src: url(assets/inter-cyrillic-200-normal.woff2) format("woff2"),
     url(assets/inter-all-200-normal.woff) format("woff");
+
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* inter-greek-ext-200-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 200;
+
   src: url(assets/inter-greek-ext-200-normal.woff2) format("woff2"),
     url(assets/inter-all-200-normal.woff) format("woff");
+
   unicode-range: U+1F00-1FFF;
 }
 
 /* inter-greek-200-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 200;
+
   src: url(assets/inter-greek-200-normal.woff2) format("woff2"),
     url(assets/inter-all-200-normal.woff) format("woff");
+
   unicode-range: U+0370-03FF;
 }
 
 /* inter-vietnamese-200-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 200;
+
   src: url(assets/inter-vietnamese-200-normal.woff2) format("woff2"),
     url(assets/inter-all-200-normal.woff) format("woff");
+
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
     U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
 
 /* inter-latin-ext-200-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 200;
+
   src: url(assets/inter-latin-ext-200-normal.woff2) format("woff2"),
     url(assets/inter-all-200-normal.woff) format("woff");
+
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
     U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* inter-latin-200-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 200;
+
   src: url(assets/inter-latin-200-normal.woff2) format("woff2"),
     url(assets/inter-all-200-normal.woff) format("woff");
+
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
 
 /* inter-cyrillic-ext-300-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 300;
+
   src: url(assets/inter-cyrillic-ext-300-normal.woff2) format("woff2"),
     url(assets/inter-all-300-normal.woff) format("woff");
+
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
     U+FE2E-FE2F;
 }
 
 /* inter-cyrillic-300-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 300;
+
   src: url(assets/inter-cyrillic-300-normal.woff2) format("woff2"),
     url(assets/inter-all-300-normal.woff) format("woff");
+
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* inter-greek-ext-300-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 300;
+
   src: url(assets/inter-greek-ext-300-normal.woff2) format("woff2"),
     url(assets/inter-all-300-normal.woff) format("woff");
+
   unicode-range: U+1F00-1FFF;
 }
 
 /* inter-greek-300-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 300;
+
   src: url(assets/inter-greek-300-normal.woff2) format("woff2"),
     url(assets/inter-all-300-normal.woff) format("woff");
+
   unicode-range: U+0370-03FF;
 }
 
 /* inter-vietnamese-300-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 300;
+
   src: url(assets/inter-vietnamese-300-normal.woff2) format("woff2"),
     url(assets/inter-all-300-normal.woff) format("woff");
+
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
     U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
 
 /* inter-latin-ext-300-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 300;
+
   src: url(assets/inter-latin-ext-300-normal.woff2) format("woff2"),
     url(assets/inter-all-300-normal.woff) format("woff");
+
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
     U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* inter-latin-300-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 300;
+
   src: url(assets/inter-latin-300-normal.woff2) format("woff2"),
     url(assets/inter-all-300-normal.woff) format("woff");
+
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
 
 /* inter-cyrillic-ext-400-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 400;
+
   src: url(assets/inter-cyrillic-ext-400-normal.woff2) format("woff2"),
     url(assets/inter-all-400-normal.woff) format("woff");
+
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
     U+FE2E-FE2F;
 }
 
 /* inter-cyrillic-400-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 400;
+
   src: url(assets/inter-cyrillic-400-normal.woff2) format("woff2"),
     url(assets/inter-all-400-normal.woff) format("woff");
+
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* inter-greek-ext-400-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 400;
+
   src: url(assets/inter-greek-ext-400-normal.woff2) format("woff2"),
     url(assets/inter-all-400-normal.woff) format("woff");
+
   unicode-range: U+1F00-1FFF;
 }
 
 /* inter-greek-400-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 400;
+
   src: url(assets/inter-greek-400-normal.woff2) format("woff2"),
     url(assets/inter-all-400-normal.woff) format("woff");
+
   unicode-range: U+0370-03FF;
 }
 
 /* inter-vietnamese-400-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 400;
+
   src: url(assets/inter-vietnamese-400-normal.woff2) format("woff2"),
     url(assets/inter-all-400-normal.woff) format("woff");
+
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
     U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
 
 /* inter-latin-ext-400-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 400;
+
   src: url(assets/inter-latin-ext-400-normal.woff2) format("woff2"),
     url(assets/inter-all-400-normal.woff) format("woff");
+
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
     U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* inter-latin-400-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 400;
+
   src: url(assets/inter-latin-400-normal.woff2) format("woff2"),
     url(assets/inter-all-400-normal.woff) format("woff");
+
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
 
 /* inter-cyrillic-ext-500-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 500;
+
   src: url(assets/inter-cyrillic-ext-500-normal.woff2) format("woff2"),
     url(assets/inter-all-500-normal.woff) format("woff");
+
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
     U+FE2E-FE2F;
 }
 
 /* inter-cyrillic-500-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 500;
+
   src: url(assets/inter-cyrillic-500-normal.woff2) format("woff2"),
     url(assets/inter-all-500-normal.woff) format("woff");
+
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* inter-greek-ext-500-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 500;
+
   src: url(assets/inter-greek-ext-500-normal.woff2) format("woff2"),
     url(assets/inter-all-500-normal.woff) format("woff");
+
   unicode-range: U+1F00-1FFF;
 }
 
 /* inter-greek-500-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 500;
+
   src: url(assets/inter-greek-500-normal.woff2) format("woff2"),
     url(assets/inter-all-500-normal.woff) format("woff");
+
   unicode-range: U+0370-03FF;
 }
 
 /* inter-vietnamese-500-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 500;
+
   src: url(assets/inter-vietnamese-500-normal.woff2) format("woff2"),
     url(assets/inter-all-500-normal.woff) format("woff");
+
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
     U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
 
 /* inter-latin-ext-500-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 500;
+
   src: url(assets/inter-latin-ext-500-normal.woff2) format("woff2"),
     url(assets/inter-all-500-normal.woff) format("woff");
+
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
     U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* inter-latin-500-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 500;
+
   src: url(assets/inter-latin-500-normal.woff2) format("woff2"),
     url(assets/inter-all-500-normal.woff) format("woff");
+
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
 
 /* inter-cyrillic-ext-600-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 600;
+
   src: url(assets/inter-cyrillic-ext-600-normal.woff2) format("woff2"),
     url(assets/inter-all-600-normal.woff) format("woff");
+
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
     U+FE2E-FE2F;
 }
 
 /* inter-cyrillic-600-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 600;
+
   src: url(assets/inter-cyrillic-600-normal.woff2) format("woff2"),
     url(assets/inter-all-600-normal.woff) format("woff");
+
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* inter-greek-ext-600-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 600;
+
   src: url(assets/inter-greek-ext-600-normal.woff2) format("woff2"),
     url(assets/inter-all-600-normal.woff) format("woff");
+
   unicode-range: U+1F00-1FFF;
 }
 
 /* inter-greek-600-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 600;
+
   src: url(assets/inter-greek-600-normal.woff2) format("woff2"),
     url(assets/inter-all-600-normal.woff) format("woff");
+
   unicode-range: U+0370-03FF;
 }
 
 /* inter-vietnamese-600-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 600;
+
   src: url(assets/inter-vietnamese-600-normal.woff2) format("woff2"),
     url(assets/inter-all-600-normal.woff) format("woff");
+
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
     U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
 
 /* inter-latin-ext-600-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 600;
+
   src: url(assets/inter-latin-ext-600-normal.woff2) format("woff2"),
     url(assets/inter-all-600-normal.woff) format("woff");
+
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
     U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* inter-latin-600-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 600;
+
   src: url(assets/inter-latin-600-normal.woff2) format("woff2"),
     url(assets/inter-all-600-normal.woff) format("woff");
+
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
 
 /* inter-cyrillic-ext-700-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 700;
+
   src: url(assets/inter-cyrillic-ext-700-normal.woff2) format("woff2"),
     url(assets/inter-all-700-normal.woff) format("woff");
+
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
     U+FE2E-FE2F;
 }
 
 /* inter-cyrillic-700-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 700;
+
   src: url(assets/inter-cyrillic-700-normal.woff2) format("woff2"),
     url(assets/inter-all-700-normal.woff) format("woff");
+
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* inter-greek-ext-700-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 700;
+
   src: url(assets/inter-greek-ext-700-normal.woff2) format("woff2"),
     url(assets/inter-all-700-normal.woff) format("woff");
+
   unicode-range: U+1F00-1FFF;
 }
 
 /* inter-greek-700-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 700;
+
   src: url(assets/inter-greek-700-normal.woff2) format("woff2"),
     url(assets/inter-all-700-normal.woff) format("woff");
+
   unicode-range: U+0370-03FF;
 }
 
 /* inter-vietnamese-700-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 700;
+
   src: url(assets/inter-vietnamese-700-normal.woff2) format("woff2"),
     url(assets/inter-all-700-normal.woff) format("woff");
+
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
     U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
 
 /* inter-latin-ext-700-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 700;
+
   src: url(assets/inter-latin-ext-700-normal.woff2) format("woff2"),
     url(assets/inter-all-700-normal.woff) format("woff");
+
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
     U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* inter-latin-700-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 700;
+
   src: url(assets/inter-latin-700-normal.woff2) format("woff2"),
     url(assets/inter-all-700-normal.woff) format("woff");
+
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
 
 /* inter-cyrillic-ext-800-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 800;
+
   src: url(assets/inter-cyrillic-ext-800-normal.woff2) format("woff2"),
     url(assets/inter-all-800-normal.woff) format("woff");
+
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
     U+FE2E-FE2F;
 }
 
 /* inter-cyrillic-800-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 800;
+
   src: url(assets/inter-cyrillic-800-normal.woff2) format("woff2"),
     url(assets/inter-all-800-normal.woff) format("woff");
+
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* inter-greek-ext-800-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 800;
+
   src: url(assets/inter-greek-ext-800-normal.woff2) format("woff2"),
     url(assets/inter-all-800-normal.woff) format("woff");
+
   unicode-range: U+1F00-1FFF;
 }
 
 /* inter-greek-800-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 800;
+
   src: url(assets/inter-greek-800-normal.woff2) format("woff2"),
     url(assets/inter-all-800-normal.woff) format("woff");
+
   unicode-range: U+0370-03FF;
 }
 
 /* inter-vietnamese-800-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 800;
+
   src: url(assets/inter-vietnamese-800-normal.woff2) format("woff2"),
     url(assets/inter-all-800-normal.woff) format("woff");
+
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
     U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
 
 /* inter-latin-ext-800-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 800;
+
   src: url(assets/inter-latin-ext-800-normal.woff2) format("woff2"),
     url(assets/inter-all-800-normal.woff) format("woff");
+
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
     U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* inter-latin-800-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 800;
+
   src: url(assets/inter-latin-800-normal.woff2) format("woff2"),
     url(assets/inter-all-800-normal.woff) format("woff");
+
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
 
 /* inter-cyrillic-ext-900-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 900;
+
   src: url(assets/inter-cyrillic-ext-900-normal.woff2) format("woff2"),
     url(assets/inter-all-900-normal.woff) format("woff");
+
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
     U+FE2E-FE2F;
 }
 
 /* inter-cyrillic-900-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 900;
+
   src: url(assets/inter-cyrillic-900-normal.woff2) format("woff2"),
     url(assets/inter-all-900-normal.woff) format("woff");
+
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* inter-greek-ext-900-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 900;
+
   src: url(assets/inter-greek-ext-900-normal.woff2) format("woff2"),
     url(assets/inter-all-900-normal.woff) format("woff");
+
   unicode-range: U+1F00-1FFF;
 }
 
 /* inter-greek-900-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 900;
+
   src: url(assets/inter-greek-900-normal.woff2) format("woff2"),
     url(assets/inter-all-900-normal.woff) format("woff");
+
   unicode-range: U+0370-03FF;
 }
 
 /* inter-vietnamese-900-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 900;
+
   src: url(assets/inter-vietnamese-900-normal.woff2) format("woff2"),
     url(assets/inter-all-900-normal.woff) format("woff");
+
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
     U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
 
 /* inter-latin-ext-900-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 900;
+
   src: url(assets/inter-latin-ext-900-normal.woff2) format("woff2"),
     url(assets/inter-all-900-normal.woff) format("woff");
+
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
     U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* inter-latin-900-normal*/
+
 @font-face {
   font-family: "Inter";
+
   font-style: normal;
+
   font-display: swap;
+
   font-weight: 900;
+
   src: url(assets/inter-latin-900-normal.woff2) format("woff2"),
     url(assets/inter-all-900-normal.woff) format("woff");
+
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
@@ -743,71 +1854,32 @@
 
 @font-face {
   font-family: "Dubai W23";
+
   font-style: normal;
+
   font-weight: bold;
+
   src: local("Dubai W23 Bold Regular"),
     url(assets/DubaiW23-Bold.woff) format("woff");
+
   unicode-range: U+0600-06FF;
 }
 
 @font-face {
   font-family: "Dubai W23";
+
   font-style: normal;
+
   font-weight: regular;
+
   src: local("Dubai W23 Regular Regular"),
     url(assets/DubaiW23-Regular.woff) format("woff");
+
   unicode-range: U+0600-06FF;
 }
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5% 64.9%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 85.7% 97.3%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-  }
-}
-
-
 /*! bulma.io v0.9.4 | MIT License | github.com/jgthms/bulma */
+
 .button,
 .input,
 .textarea,
@@ -916,7 +1988,6 @@ fieldset[disabled] .pagination-ellipsis {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -960,7 +2031,6 @@ fieldset[disabled] .pagination-ellipsis {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -1125,6 +2195,7 @@ fieldset[disabled] .pagination-ellipsis {
 }
 
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+
 html,
 body,
 p,
@@ -1217,7 +2288,9 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   text-rendering: optimizeLegibility;
-  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
 }
 
 article,
@@ -2863,7 +3936,6 @@ fieldset[disabled] .button {
 }
 
 .button.is-loading::after {
-  position: absolute;
   left: calc(50% - (1em * 0.5));
   top: calc(50% - (1em * 0.5));
   position: absolute !important;
@@ -5754,8 +6826,7 @@ fieldset[disabled] .select select:hover {
   margin-bottom: 0;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .field.is-horizontal {
     display: flex;
   }
@@ -5771,8 +6842,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .field-label {
     flex-basis: 0;
     flex-grow: 1;
@@ -5805,8 +6875,7 @@ print {
   margin-bottom: 0;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .field-body {
     display: flex;
     flex-basis: 0;
@@ -6228,8 +7297,7 @@ button.dropdown-item.is-active {
   flex-grow: 1;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .level {
     display: flex;
   }
@@ -6271,9 +7339,7 @@ print {
   flex-grow: 1;
 }
 
-@media screen and (min-width: 769px),
-print {
-
+@media screen and (min-width: 769px), print {
   .level-left .level-item:not(:last-child),
   .level-right .level-item:not(:last-child) {
     margin-right: 0.75rem;
@@ -6291,8 +7357,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .level-left {
     display: flex;
   }
@@ -6303,8 +7368,7 @@ print {
   justify-content: flex-end;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .level-right {
     display: flex;
   }
@@ -6670,7 +7734,6 @@ print {
 }
 
 @media screen and (min-width: 769px) {
-
   .modal-content,
   .modal-card {
     margin: 0 auto;
@@ -6776,7 +7839,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-white .navbar-start>.navbar-item,
   .navbar.is-white .navbar-start .navbar-link,
   .navbar.is-white .navbar-end>.navbar-item,
@@ -6847,7 +7909,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-black .navbar-start>.navbar-item,
   .navbar.is-black .navbar-start .navbar-link,
   .navbar.is-black .navbar-end>.navbar-item,
@@ -6918,7 +7979,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-light .navbar-start>.navbar-item,
   .navbar.is-light .navbar-start .navbar-link,
   .navbar.is-light .navbar-end>.navbar-item,
@@ -6989,7 +8049,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-dark .navbar-start>.navbar-item,
   .navbar.is-dark .navbar-start .navbar-link,
   .navbar.is-dark .navbar-end>.navbar-item,
@@ -7060,7 +8119,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-primary .navbar-start>.navbar-item,
   .navbar.is-primary .navbar-start .navbar-link,
   .navbar.is-primary .navbar-end>.navbar-item,
@@ -7131,7 +8189,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-link .navbar-start>.navbar-item,
   .navbar.is-link .navbar-start .navbar-link,
   .navbar.is-link .navbar-end>.navbar-item,
@@ -7202,7 +8259,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-info .navbar-start>.navbar-item,
   .navbar.is-info .navbar-start .navbar-link,
   .navbar.is-info .navbar-end>.navbar-item,
@@ -7273,7 +8329,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-success .navbar-start>.navbar-item,
   .navbar.is-success .navbar-start .navbar-link,
   .navbar.is-success .navbar-end>.navbar-item,
@@ -7344,7 +8399,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-warning .navbar-start>.navbar-item,
   .navbar.is-warning .navbar-start .navbar-link,
   .navbar.is-warning .navbar-end>.navbar-item,
@@ -7415,7 +8469,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-danger .navbar-start>.navbar-item,
   .navbar.is-danger .navbar-start .navbar-link,
   .navbar.is-danger .navbar-end>.navbar-item,
@@ -7747,7 +8800,6 @@ a.navbar-item.is-active,
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar,
   .navbar-menu,
   .navbar-start,
@@ -8123,8 +9175,7 @@ a.navbar-item.is-active,
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .pagination-list {
     flex-grow: 1;
     flex-shrink: 1;
@@ -9017,9 +10068,7 @@ label.panel-block:hover {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
-
+@media screen and (min-width: 769px), print {
   .column.is-narrow,
   .column.is-narrow-tablet {
     flex: none;
@@ -10164,8 +11213,7 @@ print {
   align-items: center;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns:not(.is-desktop) {
     display: flex;
   }
@@ -10198,8 +11246,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-0-tablet {
     --columnGap: 0rem;
   }
@@ -10257,8 +11304,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-1-tablet {
     --columnGap: 0.25rem;
   }
@@ -10316,8 +11362,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-2-tablet {
     --columnGap: 0.5rem;
   }
@@ -10375,8 +11420,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-3-tablet {
     --columnGap: 0.75rem;
   }
@@ -10434,8 +11478,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-4-tablet {
     --columnGap: 1rem;
   }
@@ -10493,8 +11536,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-5-tablet {
     --columnGap: 1.25rem;
   }
@@ -10552,8 +11594,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-6-tablet {
     --columnGap: 1.5rem;
   }
@@ -10611,8 +11652,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-7-tablet {
     --columnGap: 1.75rem;
   }
@@ -10670,8 +11710,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-8-tablet {
     --columnGap: 2rem;
   }
@@ -10725,6 +11764,7 @@ print {
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
+  min-height: -moz-min-content;
   min-height: min-content;
 }
 
@@ -10758,8 +11798,7 @@ print {
   margin-bottom: 1.5rem !important;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .tile:not(.is-child) {
     display: flex;
   }
@@ -11980,8 +13019,7 @@ a.has-text-danger-dark:focus {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-size-1-tablet {
     font-size: 3rem !important;
   }
@@ -12153,8 +13191,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .has-text-centered-tablet {
     text-align: center !important;
   }
@@ -12208,8 +13245,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .has-text-justified-tablet {
     text-align: justify !important;
   }
@@ -12263,8 +13299,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .has-text-left-tablet {
     text-align: left !important;
   }
@@ -12318,8 +13353,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .has-text-right-tablet {
     text-align: right !important;
   }
@@ -12443,8 +13477,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-block-tablet {
     display: block !important;
   }
@@ -12502,8 +13535,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-flex-tablet {
     display: flex !important;
   }
@@ -12561,8 +13593,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-inline-tablet {
     display: inline !important;
   }
@@ -12620,8 +13651,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-inline-block-tablet {
     display: inline-block !important;
   }
@@ -12679,8 +13709,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-inline-flex-tablet {
     display: inline-flex !important;
   }
@@ -12749,8 +13778,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-hidden-tablet {
     display: none !important;
   }
@@ -12808,8 +13836,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-invisible-tablet {
     visibility: hidden !important;
   }
@@ -13774,15 +14801,11 @@ print {
   padding: 1.5rem;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .hero.is-medium .hero-body {
     padding: 9rem 4.5rem;
   }
-}
 
-@media screen and (min-width: 769px),
-print {
   .hero.is-large .hero-body {
     padding: 18rem 6rem;
   }
@@ -13847,8 +14870,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .hero-buttons {
     display: flex;
     justify-content: center;
@@ -13871,8 +14893,7 @@ print {
   padding: 3rem 1.5rem;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .hero-body {
     padding: 3rem 3rem;
   }
@@ -13902,6 +14923,7 @@ print {
 }
 
 /*! Bulma Prefers Dark  | MIT License | github.com/jloh/bulma-prefers-dark */
+
 @media (prefers-color-scheme: dark) {
   html {
     background-color: #17181c;
@@ -19058,7 +20080,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-white .navbar-start>.navbar-item,
   .navbar.is-white .navbar-start .navbar-link,
   .navbar.is-white .navbar-end>.navbar-item,
@@ -19124,7 +20145,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-black .navbar-start>.navbar-item,
   .navbar.is-black .navbar-start .navbar-link,
   .navbar.is-black .navbar-end>.navbar-item,
@@ -19190,7 +20210,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-light .navbar-start>.navbar-item,
   .navbar.is-light .navbar-start .navbar-link,
   .navbar.is-light .navbar-end>.navbar-item,
@@ -19256,7 +20275,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-dark .navbar-start>.navbar-item,
   .navbar.is-dark .navbar-start .navbar-link,
   .navbar.is-dark .navbar-end>.navbar-item,
@@ -19322,7 +20340,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-primary .navbar-start>.navbar-item,
   .navbar.is-primary .navbar-start .navbar-link,
   .navbar.is-primary .navbar-end>.navbar-item,
@@ -19388,7 +20405,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-link .navbar-start>.navbar-item,
   .navbar.is-link .navbar-start .navbar-link,
   .navbar.is-link .navbar-end>.navbar-item,
@@ -19454,7 +20470,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-info .navbar-start>.navbar-item,
   .navbar.is-info .navbar-start .navbar-link,
   .navbar.is-info .navbar-end>.navbar-item,
@@ -19520,7 +20535,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-success .navbar-start>.navbar-item,
   .navbar.is-success .navbar-start .navbar-link,
   .navbar.is-success .navbar-end>.navbar-item,
@@ -19586,7 +20600,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-warning .navbar-start>.navbar-item,
   .navbar.is-warning .navbar-start .navbar-link,
   .navbar.is-warning .navbar-end>.navbar-item,
@@ -19652,7 +20665,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-danger .navbar-start>.navbar-item,
   .navbar.is-danger .navbar-start .navbar-link,
   .navbar.is-danger .navbar-end>.navbar-item,
@@ -19718,7 +20730,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-white-dark .navbar-start>.navbar-item,
   .navbar.is-white-dark .navbar-start .navbar-link,
   .navbar.is-white-dark .navbar-end>.navbar-item,
@@ -19784,7 +20795,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-black-dark .navbar-start>.navbar-item,
   .navbar.is-black-dark .navbar-start .navbar-link,
   .navbar.is-black-dark .navbar-end>.navbar-item,
@@ -19850,7 +20860,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-light-dark .navbar-start>.navbar-item,
   .navbar.is-light-dark .navbar-start .navbar-link,
   .navbar.is-light-dark .navbar-end>.navbar-item,
@@ -19916,7 +20925,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-dark-dark .navbar-start>.navbar-item,
   .navbar.is-dark-dark .navbar-start .navbar-link,
   .navbar.is-dark-dark .navbar-end>.navbar-item,
@@ -19982,7 +20990,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-primary-dark .navbar-start>.navbar-item,
   .navbar.is-primary-dark .navbar-start .navbar-link,
   .navbar.is-primary-dark .navbar-end>.navbar-item,
@@ -20048,7 +21055,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-link-dark .navbar-start>.navbar-item,
   .navbar.is-link-dark .navbar-start .navbar-link,
   .navbar.is-link-dark .navbar-end>.navbar-item,
@@ -20114,7 +21120,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-info-dark .navbar-start>.navbar-item,
   .navbar.is-info-dark .navbar-start .navbar-link,
   .navbar.is-info-dark .navbar-end>.navbar-item,
@@ -20180,7 +21185,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-success-dark .navbar-start>.navbar-item,
   .navbar.is-success-dark .navbar-start .navbar-link,
   .navbar.is-success-dark .navbar-end>.navbar-item,
@@ -20246,7 +21250,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-warning-dark .navbar-start>.navbar-item,
   .navbar.is-warning-dark .navbar-start .navbar-link,
   .navbar.is-warning-dark .navbar-end>.navbar-item,
@@ -20312,7 +21315,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-danger-dark .navbar-start>.navbar-item,
   .navbar.is-danger-dark .navbar-start .navbar-link,
   .navbar.is-danger-dark .navbar-end>.navbar-item,
@@ -20458,7 +21460,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .pagination-previous,
   .pagination-next,
   .pagination-link {
@@ -20633,7 +21634,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-white .navbar-menu,
   .hero.is-white-dark .navbar-menu {
     background-color: #e6e6e6;
@@ -20641,7 +21641,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-white .navbar-item,
   .hero.is-white .navbar-link,
   .hero.is-white-dark .navbar-item,
@@ -20714,7 +21713,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-white.is-bold .navbar-menu,
   .hero.is-white-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -20725,7 +21723,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-black,
   .hero.is-black-dark {
     background-color: #000;
@@ -20758,7 +21755,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-black .navbar-menu,
   .hero.is-black-dark .navbar-menu {
     background-color: #000;
@@ -20766,7 +21762,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-black .navbar-item,
   .hero.is-black .navbar-link,
   .hero.is-black-dark .navbar-item,
@@ -20836,7 +21831,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-black.is-bold .navbar-menu,
   .hero.is-black-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg, #000 0%, #000 71%, #0d0d0d 100%);
@@ -20844,7 +21838,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-light,
   .hero.is-light-dark {
     background-color: #dbdbdb;
@@ -20877,7 +21870,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-light .navbar-menu,
   .hero.is-light-dark .navbar-menu {
     background-color: #dbdbdb;
@@ -20885,7 +21877,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-light .navbar-item,
   .hero.is-light .navbar-link,
   .hero.is-light-dark .navbar-item,
@@ -20958,7 +21949,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-light.is-bold .navbar-menu,
   .hero.is-light-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -20969,7 +21959,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-dark,
   .hero.is-dark-dark {
     background-color: #1c1c1c;
@@ -21002,7 +21991,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-dark .navbar-menu,
   .hero.is-dark-dark .navbar-menu {
     background-color: #1c1c1c;
@@ -21010,7 +21998,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-dark .navbar-item,
   .hero.is-dark .navbar-link,
   .hero.is-dark-dark .navbar-item,
@@ -21083,7 +22070,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-dark.is-bold .navbar-menu,
   .hero.is-dark-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -21094,7 +22080,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-primary,
   .hero.is-primary-dark {
     background-color: #1a6fcf;
@@ -21127,7 +22112,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-primary .navbar-menu,
   .hero.is-primary-dark .navbar-menu {
     background-color: #1a6fcf;
@@ -21135,7 +22119,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-primary .navbar-item,
   .hero.is-primary .navbar-link,
   .hero.is-primary-dark .navbar-item,
@@ -21208,7 +22191,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-primary.is-bold .navbar-menu,
   .hero.is-primary-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -21219,7 +22201,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-link,
   .hero.is-link-dark {
     background-color: #0a3e8f;
@@ -21252,7 +22233,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-link .navbar-menu,
   .hero.is-link-dark .navbar-menu {
     background-color: #0a3e8f;
@@ -21260,7 +22240,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-link .navbar-item,
   .hero.is-link .navbar-link,
   .hero.is-link-dark .navbar-item,
@@ -21333,7 +22312,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-link.is-bold .navbar-menu,
   .hero.is-link-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -21344,7 +22322,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-info,
   .hero.is-info-dark {
     background-color: #31a3ff;
@@ -21377,7 +22354,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-info .navbar-menu,
   .hero.is-info-dark .navbar-menu {
     background-color: #31a3ff;
@@ -21385,7 +22361,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-info .navbar-item,
   .hero.is-info .navbar-link,
   .hero.is-info-dark .navbar-item,
@@ -21458,7 +22433,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-info.is-bold .navbar-menu,
   .hero.is-info-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -21469,7 +22443,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-success,
   .hero.is-success-dark {
     background-color: #508c1b;
@@ -21502,7 +22475,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-success .navbar-menu,
   .hero.is-success-dark .navbar-menu {
     background-color: #508c1b;
@@ -21510,7 +22482,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-success .navbar-item,
   .hero.is-success .navbar-link,
   .hero.is-success-dark .navbar-item,
@@ -21583,7 +22554,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-success.is-bold .navbar-menu,
   .hero.is-success-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -21594,7 +22564,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-warning,
   .hero.is-warning-dark {
     background-color: #f7b50f;
@@ -21627,7 +22596,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-warning .navbar-menu,
   .hero.is-warning-dark .navbar-menu {
     background-color: #f7b50f;
@@ -21635,7 +22603,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-warning .navbar-item,
   .hero.is-warning .navbar-link,
   .hero.is-warning-dark .navbar-item,
@@ -21708,7 +22675,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-warning.is-bold .navbar-menu,
   .hero.is-warning-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -21719,7 +22685,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-danger,
   .hero.is-danger-dark {
     background-color: #9b1e24;
@@ -21752,7 +22717,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-danger .navbar-menu,
   .hero.is-danger-dark .navbar-menu {
     background-color: #9b1e24;
@@ -21760,7 +22724,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-danger .navbar-item,
   .hero.is-danger .navbar-link,
   .hero.is-danger-dark .navbar-item,
@@ -21833,7 +22796,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-danger.is-bold .navbar-menu,
   .hero.is-danger-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -21875,7 +22837,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-white-dark .navbar-item,
   .hero.is-white-dark .navbar-link {
     color: rgba(10, 10, 10, 0.7);
@@ -21964,7 +22925,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-black-dark .navbar-item,
   .hero.is-black-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -22059,7 +23019,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-light-dark .navbar-item,
   .hero.is-light-dark .navbar-link {
     color: rgba(0, 0, 0, 0.7);
@@ -22154,7 +23113,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-dark-dark .navbar-item,
   .hero.is-dark-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -22249,7 +23207,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-primary-dark .navbar-item,
   .hero.is-primary-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -22344,7 +23301,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-link-dark .navbar-item,
   .hero.is-link-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -22439,7 +23395,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-info-dark .navbar-item,
   .hero.is-info-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -22534,7 +23489,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-success-dark .navbar-item,
   .hero.is-success-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -22629,7 +23583,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-warning-dark .navbar-item,
   .hero.is-warning-dark .navbar-link {
     color: rgba(0, 0, 0, 0.7);
@@ -22724,7 +23677,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-danger-dark .navbar-item,
   .hero.is-danger-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -22798,6 +23750,7 @@ print {
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2022 Fonticons, Inc.
  */
+
 .fa {
   font-family: var(--fa-style-family, "Font Awesome 6 Free");
   font-weight: var(--fa-style, 900);
@@ -22952,120 +23905,68 @@ print {
 }
 
 .fa-beat {
-  -webkit-animation-name: fa-beat;
   animation-name: fa-beat;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
   animation-timing-function: var(--fa-animation-timing, ease-in-out);
 }
 
 .fa-bounce {
-  -webkit-animation-name: fa-bounce;
   animation-name: fa-bounce;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing,
-      cubic-bezier(0.28, 0.84, 0.42, 1));
   animation-timing-function: var(--fa-animation-timing,
       cubic-bezier(0.28, 0.84, 0.42, 1));
 }
 
 .fa-fade {
-  -webkit-animation-name: fa-fade;
   animation-name: fa-fade;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing,
-      cubic-bezier(0.4, 0, 0.6, 1));
   animation-timing-function: var(--fa-animation-timing,
       cubic-bezier(0.4, 0, 0.6, 1));
 }
 
 .fa-beat-fade {
-  -webkit-animation-name: fa-beat-fade;
   animation-name: fa-beat-fade;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing,
-      cubic-bezier(0.4, 0, 0.6, 1));
   animation-timing-function: var(--fa-animation-timing,
       cubic-bezier(0.4, 0, 0.6, 1));
 }
 
 .fa-flip {
-  -webkit-animation-name: fa-flip;
   animation-name: fa-flip;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
   animation-timing-function: var(--fa-animation-timing, ease-in-out);
 }
 
 .fa-shake {
-  -webkit-animation-name: fa-shake;
   animation-name: fa-shake;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
   animation-timing-function: var(--fa-animation-timing, linear);
 }
 
 .fa-spin {
-  -webkit-animation-name: fa-spin;
   animation-name: fa-spin;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 2s);
   animation-duration: var(--fa-animation-duration, 2s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
   animation-timing-function: var(--fa-animation-timing, linear);
 }
 
@@ -23075,21 +23976,14 @@ print {
 
 .fa-pulse,
 .fa-spin-pulse {
-  -webkit-animation-name: fa-spin;
   animation-name: fa-spin;
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
   animation-timing-function: var(--fa-animation-timing, steps(8));
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   .fa-beat,
   .fa-bounce,
   .fa-fade,
@@ -23099,134 +23993,55 @@ print {
   .fa-shake,
   .fa-spin,
   .fa-spin-pulse {
-    -webkit-animation-delay: -1ms;
     animation-delay: -1ms;
-    -webkit-animation-duration: 1ms;
     animation-duration: 1ms;
-    -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
     transition-delay: 0s;
     transition-duration: 0s;
   }
 }
 
-@-webkit-keyframes fa-beat {
-
-  0%,
-  90% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-
-  45% {
-    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
-    transform: scale(var(--fa-beat-scale, 1.25));
-  }
-}
-
 @keyframes fa-beat {
-
   0%,
   90% {
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 
   45% {
-    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
     transform: scale(var(--fa-beat-scale, 1.25));
-  }
-}
-
-@-webkit-keyframes fa-bounce {
-  0% {
-    -webkit-transform: scale(1, 1) translateY(0);
-    transform: scale(1, 1) translateY(0);
-  }
-
-  10% {
-    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1),
-        var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
-    transform: scale(var(--fa-bounce-start-scale-x, 1.1),
-        var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
-  }
-
-  30% {
-    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9),
-        var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
-    transform: scale(var(--fa-bounce-jump-scale-x, 0.9),
-        var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
-  }
-
-  50% {
-    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05),
-        var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
-    transform: scale(var(--fa-bounce-land-scale-x, 1.05),
-        var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
-  }
-
-  57% {
-    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
-    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
-  }
-
-  64% {
-    -webkit-transform: scale(1, 1) translateY(0);
-    transform: scale(1, 1) translateY(0);
-  }
-
-  100% {
-    -webkit-transform: scale(1, 1) translateY(0);
-    transform: scale(1, 1) translateY(0);
   }
 }
 
 @keyframes fa-bounce {
   0% {
-    -webkit-transform: scale(1, 1) translateY(0);
     transform: scale(1, 1) translateY(0);
   }
 
   10% {
-    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1),
-        var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
     transform: scale(var(--fa-bounce-start-scale-x, 1.1),
         var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
   }
 
   30% {
-    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9),
-        var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
     transform: scale(var(--fa-bounce-jump-scale-x, 0.9),
         var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
   }
 
   50% {
-    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05),
-        var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
     transform: scale(var(--fa-bounce-land-scale-x, 1.05),
         var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
   }
 
   57% {
-    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
     transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
   }
 
   64% {
-    -webkit-transform: scale(1, 1) translateY(0);
     transform: scale(1, 1) translateY(0);
   }
 
   100% {
-    -webkit-transform: scale(1, 1) translateY(0);
     transform: scale(1, 1) translateY(0);
-  }
-}
-
-@-webkit-keyframes fa-fade {
-  50% {
-    opacity: var(--fa-fade-opacity, 0.4);
   }
 }
 
@@ -23236,57 +24051,21 @@ print {
   }
 }
 
-@-webkit-keyframes fa-beat-fade {
-
-  0%,
-  100% {
-    opacity: var(--fa-beat-fade-opacity, 0.4);
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 1;
-    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
-    transform: scale(var(--fa-beat-fade-scale, 1.125));
-  }
-}
-
 @keyframes fa-beat-fade {
-
   0%,
   100% {
     opacity: var(--fa-beat-fade-opacity, 0.4);
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 
   50% {
     opacity: 1;
-    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
     transform: scale(var(--fa-beat-fade-scale, 1.125));
-  }
-}
-
-@-webkit-keyframes fa-flip {
-  50% {
-    -webkit-transform: rotate3d(var(--fa-flip-x, 0),
-        var(--fa-flip-y, 1),
-        var(--fa-flip-z, 0),
-        var(--fa-flip-angle, -180deg));
-    transform: rotate3d(var(--fa-flip-x, 0),
-        var(--fa-flip-y, 1),
-        var(--fa-flip-z, 0),
-        var(--fa-flip-angle, -180deg));
   }
 }
 
 @keyframes fa-flip {
   50% {
-    -webkit-transform: rotate3d(var(--fa-flip-x, 0),
-        var(--fa-flip-y, 1),
-        var(--fa-flip-z, 0),
-        var(--fa-flip-angle, -180deg));
     transform: rotate3d(var(--fa-flip-x, 0),
         var(--fa-flip-y, 1),
         var(--fa-flip-z, 0),
@@ -23294,163 +24073,83 @@ print {
   }
 }
 
-@-webkit-keyframes fa-shake {
-  0% {
-    -webkit-transform: rotate(-15deg);
-    transform: rotate(-15deg);
-  }
-
-  4% {
-    -webkit-transform: rotate(15deg);
-    transform: rotate(15deg);
-  }
-
-  8%,
-  24% {
-    -webkit-transform: rotate(-18deg);
-    transform: rotate(-18deg);
-  }
-
-  12%,
-  28% {
-    -webkit-transform: rotate(18deg);
-    transform: rotate(18deg);
-  }
-
-  16% {
-    -webkit-transform: rotate(-22deg);
-    transform: rotate(-22deg);
-  }
-
-  20% {
-    -webkit-transform: rotate(22deg);
-    transform: rotate(22deg);
-  }
-
-  32% {
-    -webkit-transform: rotate(-12deg);
-    transform: rotate(-12deg);
-  }
-
-  36% {
-    -webkit-transform: rotate(12deg);
-    transform: rotate(12deg);
-  }
-
-  40%,
-  100% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-}
-
 @keyframes fa-shake {
   0% {
-    -webkit-transform: rotate(-15deg);
     transform: rotate(-15deg);
   }
 
   4% {
-    -webkit-transform: rotate(15deg);
     transform: rotate(15deg);
   }
 
   8%,
   24% {
-    -webkit-transform: rotate(-18deg);
     transform: rotate(-18deg);
   }
 
   12%,
   28% {
-    -webkit-transform: rotate(18deg);
     transform: rotate(18deg);
   }
 
   16% {
-    -webkit-transform: rotate(-22deg);
     transform: rotate(-22deg);
   }
 
   20% {
-    -webkit-transform: rotate(22deg);
     transform: rotate(22deg);
   }
 
   32% {
-    -webkit-transform: rotate(-12deg);
     transform: rotate(-12deg);
   }
 
   36% {
-    -webkit-transform: rotate(12deg);
     transform: rotate(12deg);
   }
 
   40%,
   100% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-  }
-}
-
-@-webkit-keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
   }
 }
 
 @keyframes fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 
   100% {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
 
 .fa-rotate-90 {
-  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .fa-rotate-180 {
-  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 .fa-rotate-270 {
-  -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
 .fa-flip-horizontal {
-  -webkit-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 
 .fa-flip-vertical {
-  -webkit-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 
 .fa-flip-both,
 .fa-flip-horizontal.fa-flip-vertical {
-  -webkit-transform: scale(-1, -1);
   transform: scale(-1, -1);
 }
 
 .fa-rotate-by {
-  -webkit-transform: rotate(var(--fa-rotate-angle, none));
   transform: rotate(var(--fa-rotate-angle, none));
 }
 
@@ -31319,6 +32018,7 @@ print {
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2022 Fonticons, Inc.
  */
+
 :root,
 :host {
   --fa-style-family-classic: "Font Awesome 6 Free";
@@ -31327,9 +32027,13 @@ print {
 
 @font-face {
   font-family: "Font Awesome 6 Free";
+
   font-style: normal;
+
   font-weight: 400;
+
   font-display: block;
+
   src: url(assets/fa-regular-400.woff2) format("woff2"),
     url(assets/fa-regular-400.ttf) format("truetype");
 }
@@ -31344,6 +32048,7 @@ print {
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2022 Fonticons, Inc.
  */
+
 :root,
 :host {
   --fa-style-family-classic: "Font Awesome 6 Free";
@@ -31352,9 +32057,13 @@ print {
 
 @font-face {
   font-family: "Font Awesome 6 Free";
+
   font-style: normal;
+
   font-weight: 900;
+
   font-display: block;
+
   src: url(assets/fa-solid-900.woff2) format("woff2"),
     url(assets/fa-solid-900.ttf) format("truetype");
 }
@@ -31369,6 +32078,7 @@ print {
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2022 Fonticons, Inc.
  */
+
 :root,
 :host {
   --fa-style-family-brands: "Font Awesome 6 Brands";
@@ -31377,9 +32087,13 @@ print {
 
 @font-face {
   font-family: "Font Awesome 6 Brands";
+
   font-style: normal;
+
   font-weight: 400;
+
   font-display: block;
+
   src: url(assets/fa-brands-400.woff2) format("woff2"),
     url(assets/fa-brands-400.ttf) format("truetype");
 }
@@ -33468,8 +34182,10 @@ print {
 
 .view>p:first-child img:only-child {
   border-radius: 0.5em;
-  object-fit: cover;
-  object-position: 0 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 50%;
+     object-position: 0 50%;
   max-height: 20em;
   width: 100%;
   transition: max-height 0.5s;
@@ -33555,7 +34271,8 @@ print {
 
 .view input[type="checkbox"] {
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   background-color: var(--form-background);
   margin: 0 0.3em 0 0;
   font: inherit;
@@ -33573,7 +34290,8 @@ print {
   content: "";
   width: 0.65em;
   height: 0.65em;
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+          clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   transform: scale(0);
   transform-origin: bottom left;
   transition: 120ms transform ease-in-out;
@@ -33713,7 +34431,6 @@ fieldset[disabled] .pagination-ellipsis {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -33757,7 +34474,6 @@ fieldset[disabled] .pagination-ellipsis {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -33922,6 +34638,7 @@ fieldset[disabled] .pagination-ellipsis {
 }
 
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+
 html,
 body,
 p,
@@ -34014,7 +34731,9 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   text-rendering: optimizeLegibility;
-  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
 }
 
 article,
@@ -35660,7 +36379,6 @@ fieldset[disabled] .button {
 }
 
 .button.is-loading::after {
-  position: absolute;
   left: calc(50% - (1em * 0.5));
   top: calc(50% - (1em * 0.5));
   position: absolute !important;
@@ -38551,8 +39269,7 @@ fieldset[disabled] .select select:hover {
   margin-bottom: 0;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .field.is-horizontal {
     display: flex;
   }
@@ -38568,8 +39285,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .field-label {
     flex-basis: 0;
     flex-grow: 1;
@@ -38602,8 +39318,7 @@ print {
   margin-bottom: 0;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .field-body {
     display: flex;
     flex-basis: 0;
@@ -39025,8 +39740,7 @@ button.dropdown-item.is-active {
   flex-grow: 1;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .level {
     display: flex;
   }
@@ -39068,9 +39782,7 @@ print {
   flex-grow: 1;
 }
 
-@media screen and (min-width: 769px),
-print {
-
+@media screen and (min-width: 769px), print {
   .level-left .level-item:not(:last-child),
   .level-right .level-item:not(:last-child) {
     margin-right: 0.75rem;
@@ -39088,8 +39800,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .level-left {
     display: flex;
   }
@@ -39100,8 +39811,7 @@ print {
   justify-content: flex-end;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .level-right {
     display: flex;
   }
@@ -39467,7 +40177,6 @@ print {
 }
 
 @media screen and (min-width: 769px) {
-
   .modal-content,
   .modal-card {
     margin: 0 auto;
@@ -39573,7 +40282,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-white .navbar-start>.navbar-item,
   .navbar.is-white .navbar-start .navbar-link,
   .navbar.is-white .navbar-end>.navbar-item,
@@ -39644,7 +40352,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-black .navbar-start>.navbar-item,
   .navbar.is-black .navbar-start .navbar-link,
   .navbar.is-black .navbar-end>.navbar-item,
@@ -39715,7 +40422,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-light .navbar-start>.navbar-item,
   .navbar.is-light .navbar-start .navbar-link,
   .navbar.is-light .navbar-end>.navbar-item,
@@ -39786,7 +40492,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-dark .navbar-start>.navbar-item,
   .navbar.is-dark .navbar-start .navbar-link,
   .navbar.is-dark .navbar-end>.navbar-item,
@@ -39857,7 +40562,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-primary .navbar-start>.navbar-item,
   .navbar.is-primary .navbar-start .navbar-link,
   .navbar.is-primary .navbar-end>.navbar-item,
@@ -39928,7 +40632,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-link .navbar-start>.navbar-item,
   .navbar.is-link .navbar-start .navbar-link,
   .navbar.is-link .navbar-end>.navbar-item,
@@ -39999,7 +40702,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-info .navbar-start>.navbar-item,
   .navbar.is-info .navbar-start .navbar-link,
   .navbar.is-info .navbar-end>.navbar-item,
@@ -40070,7 +40772,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-success .navbar-start>.navbar-item,
   .navbar.is-success .navbar-start .navbar-link,
   .navbar.is-success .navbar-end>.navbar-item,
@@ -40141,7 +40842,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-warning .navbar-start>.navbar-item,
   .navbar.is-warning .navbar-start .navbar-link,
   .navbar.is-warning .navbar-end>.navbar-item,
@@ -40212,7 +40912,6 @@ print {
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar.is-danger .navbar-start>.navbar-item,
   .navbar.is-danger .navbar-start .navbar-link,
   .navbar.is-danger .navbar-end>.navbar-item,
@@ -40544,7 +41243,6 @@ a.navbar-item.is-active,
 }
 
 @media screen and (min-width: 1024px) {
-
   .navbar,
   .navbar-menu,
   .navbar-start,
@@ -40920,8 +41618,7 @@ a.navbar-item.is-active,
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .pagination-list {
     flex-grow: 1;
     flex-shrink: 1;
@@ -41814,9 +42511,7 @@ label.panel-block:hover {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
-
+@media screen and (min-width: 769px), print {
   .column.is-narrow,
   .column.is-narrow-tablet {
     flex: none;
@@ -42961,8 +43656,7 @@ print {
   align-items: center;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns:not(.is-desktop) {
     display: flex;
   }
@@ -42995,8 +43689,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-0-tablet {
     --columnGap: 0rem;
   }
@@ -43054,8 +43747,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-1-tablet {
     --columnGap: 0.25rem;
   }
@@ -43113,8 +43805,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-2-tablet {
     --columnGap: 0.5rem;
   }
@@ -43172,8 +43863,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-3-tablet {
     --columnGap: 0.75rem;
   }
@@ -43231,8 +43921,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-4-tablet {
     --columnGap: 1rem;
   }
@@ -43290,8 +43979,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-5-tablet {
     --columnGap: 1.25rem;
   }
@@ -43349,8 +44037,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-6-tablet {
     --columnGap: 1.5rem;
   }
@@ -43408,8 +44095,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-7-tablet {
     --columnGap: 1.75rem;
   }
@@ -43467,8 +44153,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .columns.is-variable.is-8-tablet {
     --columnGap: 2rem;
   }
@@ -43522,6 +44207,7 @@ print {
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
+  min-height: -moz-min-content;
   min-height: min-content;
 }
 
@@ -43555,8 +44241,7 @@ print {
   margin-bottom: 1.5rem !important;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .tile:not(.is-child) {
     display: flex;
   }
@@ -44777,8 +45462,7 @@ a.has-text-danger-dark:focus {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-size-1-tablet {
     font-size: 3rem !important;
   }
@@ -44950,8 +45634,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .has-text-centered-tablet {
     text-align: center !important;
   }
@@ -45005,8 +45688,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .has-text-justified-tablet {
     text-align: justify !important;
   }
@@ -45060,8 +45742,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .has-text-left-tablet {
     text-align: left !important;
   }
@@ -45115,8 +45796,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .has-text-right-tablet {
     text-align: right !important;
   }
@@ -45240,8 +45920,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-block-tablet {
     display: block !important;
   }
@@ -45299,8 +45978,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-flex-tablet {
     display: flex !important;
   }
@@ -45358,8 +46036,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-inline-tablet {
     display: inline !important;
   }
@@ -45417,8 +46094,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-inline-block-tablet {
     display: inline-block !important;
   }
@@ -45476,8 +46152,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-inline-flex-tablet {
     display: inline-flex !important;
   }
@@ -45546,8 +46221,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-hidden-tablet {
     display: none !important;
   }
@@ -45605,8 +46279,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .is-invisible-tablet {
     visibility: hidden !important;
   }
@@ -46571,15 +47244,11 @@ print {
   padding: 1.5rem;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .hero.is-medium .hero-body {
     padding: 9rem 4.5rem;
   }
-}
 
-@media screen and (min-width: 769px),
-print {
   .hero.is-large .hero-body {
     padding: 18rem 6rem;
   }
@@ -46644,8 +47313,7 @@ print {
   }
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .hero-buttons {
     display: flex;
     justify-content: center;
@@ -46668,8 +47336,7 @@ print {
   padding: 3rem 1.5rem;
 }
 
-@media screen and (min-width: 769px),
-print {
+@media screen and (min-width: 769px), print {
   .hero-body {
     padding: 3rem 3rem;
   }
@@ -46699,6 +47366,7 @@ print {
 }
 
 /*! Bulma Prefers Dark  | MIT License | github.com/jloh/bulma-prefers-dark */
+
 @media (prefers-color-scheme: dark) {
   html {
     background-color: #17181c;
@@ -51855,7 +52523,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-white .navbar-start>.navbar-item,
   .navbar.is-white .navbar-start .navbar-link,
   .navbar.is-white .navbar-end>.navbar-item,
@@ -51921,7 +52588,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-black .navbar-start>.navbar-item,
   .navbar.is-black .navbar-start .navbar-link,
   .navbar.is-black .navbar-end>.navbar-item,
@@ -51987,7 +52653,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-light .navbar-start>.navbar-item,
   .navbar.is-light .navbar-start .navbar-link,
   .navbar.is-light .navbar-end>.navbar-item,
@@ -52053,7 +52718,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-dark .navbar-start>.navbar-item,
   .navbar.is-dark .navbar-start .navbar-link,
   .navbar.is-dark .navbar-end>.navbar-item,
@@ -52119,7 +52783,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-primary .navbar-start>.navbar-item,
   .navbar.is-primary .navbar-start .navbar-link,
   .navbar.is-primary .navbar-end>.navbar-item,
@@ -52185,7 +52848,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-link .navbar-start>.navbar-item,
   .navbar.is-link .navbar-start .navbar-link,
   .navbar.is-link .navbar-end>.navbar-item,
@@ -52251,7 +52913,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-info .navbar-start>.navbar-item,
   .navbar.is-info .navbar-start .navbar-link,
   .navbar.is-info .navbar-end>.navbar-item,
@@ -52317,7 +52978,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-success .navbar-start>.navbar-item,
   .navbar.is-success .navbar-start .navbar-link,
   .navbar.is-success .navbar-end>.navbar-item,
@@ -52383,7 +53043,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-warning .navbar-start>.navbar-item,
   .navbar.is-warning .navbar-start .navbar-link,
   .navbar.is-warning .navbar-end>.navbar-item,
@@ -52449,7 +53108,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-danger .navbar-start>.navbar-item,
   .navbar.is-danger .navbar-start .navbar-link,
   .navbar.is-danger .navbar-end>.navbar-item,
@@ -52515,7 +53173,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-white-dark .navbar-start>.navbar-item,
   .navbar.is-white-dark .navbar-start .navbar-link,
   .navbar.is-white-dark .navbar-end>.navbar-item,
@@ -52581,7 +53238,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-black-dark .navbar-start>.navbar-item,
   .navbar.is-black-dark .navbar-start .navbar-link,
   .navbar.is-black-dark .navbar-end>.navbar-item,
@@ -52647,7 +53303,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-light-dark .navbar-start>.navbar-item,
   .navbar.is-light-dark .navbar-start .navbar-link,
   .navbar.is-light-dark .navbar-end>.navbar-item,
@@ -52713,7 +53368,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-dark-dark .navbar-start>.navbar-item,
   .navbar.is-dark-dark .navbar-start .navbar-link,
   .navbar.is-dark-dark .navbar-end>.navbar-item,
@@ -52779,7 +53433,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-primary-dark .navbar-start>.navbar-item,
   .navbar.is-primary-dark .navbar-start .navbar-link,
   .navbar.is-primary-dark .navbar-end>.navbar-item,
@@ -52845,7 +53498,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-link-dark .navbar-start>.navbar-item,
   .navbar.is-link-dark .navbar-start .navbar-link,
   .navbar.is-link-dark .navbar-end>.navbar-item,
@@ -52911,7 +53563,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-info-dark .navbar-start>.navbar-item,
   .navbar.is-info-dark .navbar-start .navbar-link,
   .navbar.is-info-dark .navbar-end>.navbar-item,
@@ -52977,7 +53628,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-success-dark .navbar-start>.navbar-item,
   .navbar.is-success-dark .navbar-start .navbar-link,
   .navbar.is-success-dark .navbar-end>.navbar-item,
@@ -53043,7 +53693,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-warning-dark .navbar-start>.navbar-item,
   .navbar.is-warning-dark .navbar-start .navbar-link,
   .navbar.is-warning-dark .navbar-end>.navbar-item,
@@ -53109,7 +53758,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (min-width: 1024px) {
-
   .navbar.is-danger-dark .navbar-start>.navbar-item,
   .navbar.is-danger-dark .navbar-start .navbar-link,
   .navbar.is-danger-dark .navbar-end>.navbar-item,
@@ -53255,7 +53903,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .pagination-previous,
   .pagination-next,
   .pagination-link {
@@ -53430,7 +54077,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-white .navbar-menu,
   .hero.is-white-dark .navbar-menu {
     background-color: #e6e6e6;
@@ -53438,7 +54084,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-white .navbar-item,
   .hero.is-white .navbar-link,
   .hero.is-white-dark .navbar-item,
@@ -53511,7 +54156,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-white.is-bold .navbar-menu,
   .hero.is-white-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -53522,7 +54166,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-black,
   .hero.is-black-dark {
     background-color: #000;
@@ -53555,7 +54198,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-black .navbar-menu,
   .hero.is-black-dark .navbar-menu {
     background-color: #000;
@@ -53563,7 +54205,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-black .navbar-item,
   .hero.is-black .navbar-link,
   .hero.is-black-dark .navbar-item,
@@ -53633,7 +54274,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-black.is-bold .navbar-menu,
   .hero.is-black-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg, #000 0%, #000 71%, #0d0d0d 100%);
@@ -53641,7 +54281,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-light,
   .hero.is-light-dark {
     background-color: #dbdbdb;
@@ -53674,7 +54313,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-light .navbar-menu,
   .hero.is-light-dark .navbar-menu {
     background-color: #dbdbdb;
@@ -53682,7 +54320,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-light .navbar-item,
   .hero.is-light .navbar-link,
   .hero.is-light-dark .navbar-item,
@@ -53755,7 +54392,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-light.is-bold .navbar-menu,
   .hero.is-light-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -53766,7 +54402,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-dark,
   .hero.is-dark-dark {
     background-color: #1c1c1c;
@@ -53799,7 +54434,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-dark .navbar-menu,
   .hero.is-dark-dark .navbar-menu {
     background-color: #1c1c1c;
@@ -53807,7 +54441,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-dark .navbar-item,
   .hero.is-dark .navbar-link,
   .hero.is-dark-dark .navbar-item,
@@ -53880,7 +54513,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-dark.is-bold .navbar-menu,
   .hero.is-dark-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -53891,7 +54523,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-primary,
   .hero.is-primary-dark {
     background-color: #1a6fcf;
@@ -53924,7 +54555,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-primary .navbar-menu,
   .hero.is-primary-dark .navbar-menu {
     background-color: #1a6fcf;
@@ -53932,7 +54562,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-primary .navbar-item,
   .hero.is-primary .navbar-link,
   .hero.is-primary-dark .navbar-item,
@@ -54005,7 +54634,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-primary.is-bold .navbar-menu,
   .hero.is-primary-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -54016,7 +54644,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-link,
   .hero.is-link-dark {
     background-color: #0a3e8f;
@@ -54049,7 +54676,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-link .navbar-menu,
   .hero.is-link-dark .navbar-menu {
     background-color: #0a3e8f;
@@ -54057,7 +54683,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-link .navbar-item,
   .hero.is-link .navbar-link,
   .hero.is-link-dark .navbar-item,
@@ -54130,7 +54755,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-link.is-bold .navbar-menu,
   .hero.is-link-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -54141,7 +54765,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-info,
   .hero.is-info-dark {
     background-color: #31a3ff;
@@ -54174,7 +54797,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-info .navbar-menu,
   .hero.is-info-dark .navbar-menu {
     background-color: #31a3ff;
@@ -54182,7 +54804,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-info .navbar-item,
   .hero.is-info .navbar-link,
   .hero.is-info-dark .navbar-item,
@@ -54255,7 +54876,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-info.is-bold .navbar-menu,
   .hero.is-info-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -54266,7 +54886,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-success,
   .hero.is-success-dark {
     background-color: #508c1b;
@@ -54299,7 +54918,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-success .navbar-menu,
   .hero.is-success-dark .navbar-menu {
     background-color: #508c1b;
@@ -54307,7 +54925,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-success .navbar-item,
   .hero.is-success .navbar-link,
   .hero.is-success-dark .navbar-item,
@@ -54380,7 +54997,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-success.is-bold .navbar-menu,
   .hero.is-success-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -54391,7 +55007,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-warning,
   .hero.is-warning-dark {
     background-color: #f7b50f;
@@ -54424,7 +55039,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-warning .navbar-menu,
   .hero.is-warning-dark .navbar-menu {
     background-color: #f7b50f;
@@ -54432,7 +55046,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-warning .navbar-item,
   .hero.is-warning .navbar-link,
   .hero.is-warning-dark .navbar-item,
@@ -54505,7 +55118,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-warning.is-bold .navbar-menu,
   .hero.is-warning-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -54516,7 +55128,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-danger,
   .hero.is-danger-dark {
     background-color: #9b1e24;
@@ -54549,7 +55160,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 1023px) {
-
   .hero.is-danger .navbar-menu,
   .hero.is-danger-dark .navbar-menu {
     background-color: #9b1e24;
@@ -54557,7 +55167,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-danger .navbar-item,
   .hero.is-danger .navbar-link,
   .hero.is-danger-dark .navbar-item,
@@ -54630,7 +55239,6 @@ print {
 }
 
 @media screen and (prefers-color-scheme: dark) and (max-width: 768px) {
-
   .hero.is-danger.is-bold .navbar-menu,
   .hero.is-danger-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg,
@@ -54672,7 +55280,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-white-dark .navbar-item,
   .hero.is-white-dark .navbar-link {
     color: rgba(10, 10, 10, 0.7);
@@ -54761,7 +55368,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-black-dark .navbar-item,
   .hero.is-black-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -54856,7 +55462,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-light-dark .navbar-item,
   .hero.is-light-dark .navbar-link {
     color: rgba(0, 0, 0, 0.7);
@@ -54951,7 +55556,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-dark-dark .navbar-item,
   .hero.is-dark-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -55046,7 +55650,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-primary-dark .navbar-item,
   .hero.is-primary-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -55141,7 +55744,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-link-dark .navbar-item,
   .hero.is-link-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -55236,7 +55838,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-info-dark .navbar-item,
   .hero.is-info-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -55331,7 +55932,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-success-dark .navbar-item,
   .hero.is-success-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -55426,7 +56026,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-warning-dark .navbar-item,
   .hero.is-warning-dark .navbar-link {
     color: rgba(0, 0, 0, 0.7);
@@ -55521,7 +56120,6 @@ print {
 }
 
 @media (prefers-color-scheme: dark) {
-
   .hero.is-danger-dark .navbar-item,
   .hero.is-danger-dark .navbar-link {
     color: rgba(255, 255, 255, 0.7);
@@ -55595,6 +56193,7 @@ print {
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2022 Fonticons, Inc.
  */
+
 .fa {
   font-family: var(--fa-style-family, "Font Awesome 6 Free");
   font-weight: var(--fa-style, 900);
@@ -55749,120 +56348,68 @@ print {
 }
 
 .fa-beat {
-  -webkit-animation-name: fa-beat;
   animation-name: fa-beat;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
   animation-timing-function: var(--fa-animation-timing, ease-in-out);
 }
 
 .fa-bounce {
-  -webkit-animation-name: fa-bounce;
   animation-name: fa-bounce;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing,
-      cubic-bezier(0.28, 0.84, 0.42, 1));
   animation-timing-function: var(--fa-animation-timing,
       cubic-bezier(0.28, 0.84, 0.42, 1));
 }
 
 .fa-fade {
-  -webkit-animation-name: fa-fade;
   animation-name: fa-fade;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing,
-      cubic-bezier(0.4, 0, 0.6, 1));
   animation-timing-function: var(--fa-animation-timing,
       cubic-bezier(0.4, 0, 0.6, 1));
 }
 
 .fa-beat-fade {
-  -webkit-animation-name: fa-beat-fade;
   animation-name: fa-beat-fade;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing,
-      cubic-bezier(0.4, 0, 0.6, 1));
   animation-timing-function: var(--fa-animation-timing,
       cubic-bezier(0.4, 0, 0.6, 1));
 }
 
 .fa-flip {
-  -webkit-animation-name: fa-flip;
   animation-name: fa-flip;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
   animation-timing-function: var(--fa-animation-timing, ease-in-out);
 }
 
 .fa-shake {
-  -webkit-animation-name: fa-shake;
   animation-name: fa-shake;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
   animation-timing-function: var(--fa-animation-timing, linear);
 }
 
 .fa-spin {
-  -webkit-animation-name: fa-spin;
   animation-name: fa-spin;
-  -webkit-animation-delay: var(--fa-animation-delay, 0s);
   animation-delay: var(--fa-animation-delay, 0s);
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 2s);
   animation-duration: var(--fa-animation-duration, 2s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
   animation-timing-function: var(--fa-animation-timing, linear);
 }
 
@@ -55872,21 +56419,14 @@ print {
 
 .fa-pulse,
 .fa-spin-pulse {
-  -webkit-animation-name: fa-spin;
   animation-name: fa-spin;
-  -webkit-animation-direction: var(--fa-animation-direction, normal);
   animation-direction: var(--fa-animation-direction, normal);
-  -webkit-animation-duration: var(--fa-animation-duration, 1s);
   animation-duration: var(--fa-animation-duration, 1s);
-  -webkit-animation-iteration-count: var(--fa-animation-iteration-count,
-      infinite);
   animation-iteration-count: var(--fa-animation-iteration-count, infinite);
-  -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
   animation-timing-function: var(--fa-animation-timing, steps(8));
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   .fa-beat,
   .fa-bounce,
   .fa-fade,
@@ -55896,134 +56436,55 @@ print {
   .fa-shake,
   .fa-spin,
   .fa-spin-pulse {
-    -webkit-animation-delay: -1ms;
     animation-delay: -1ms;
-    -webkit-animation-duration: 1ms;
     animation-duration: 1ms;
-    -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
     transition-delay: 0s;
     transition-duration: 0s;
   }
 }
 
-@-webkit-keyframes fa-beat {
-
-  0%,
-  90% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-
-  45% {
-    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
-    transform: scale(var(--fa-beat-scale, 1.25));
-  }
-}
-
 @keyframes fa-beat {
-
   0%,
   90% {
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 
   45% {
-    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
     transform: scale(var(--fa-beat-scale, 1.25));
-  }
-}
-
-@-webkit-keyframes fa-bounce {
-  0% {
-    -webkit-transform: scale(1, 1) translateY(0);
-    transform: scale(1, 1) translateY(0);
-  }
-
-  10% {
-    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1),
-        var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
-    transform: scale(var(--fa-bounce-start-scale-x, 1.1),
-        var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
-  }
-
-  30% {
-    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9),
-        var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
-    transform: scale(var(--fa-bounce-jump-scale-x, 0.9),
-        var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
-  }
-
-  50% {
-    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05),
-        var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
-    transform: scale(var(--fa-bounce-land-scale-x, 1.05),
-        var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
-  }
-
-  57% {
-    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
-    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
-  }
-
-  64% {
-    -webkit-transform: scale(1, 1) translateY(0);
-    transform: scale(1, 1) translateY(0);
-  }
-
-  100% {
-    -webkit-transform: scale(1, 1) translateY(0);
-    transform: scale(1, 1) translateY(0);
   }
 }
 
 @keyframes fa-bounce {
   0% {
-    -webkit-transform: scale(1, 1) translateY(0);
     transform: scale(1, 1) translateY(0);
   }
 
   10% {
-    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1),
-        var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
     transform: scale(var(--fa-bounce-start-scale-x, 1.1),
         var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
   }
 
   30% {
-    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9),
-        var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
     transform: scale(var(--fa-bounce-jump-scale-x, 0.9),
         var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
   }
 
   50% {
-    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05),
-        var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
     transform: scale(var(--fa-bounce-land-scale-x, 1.05),
         var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
   }
 
   57% {
-    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
     transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
   }
 
   64% {
-    -webkit-transform: scale(1, 1) translateY(0);
     transform: scale(1, 1) translateY(0);
   }
 
   100% {
-    -webkit-transform: scale(1, 1) translateY(0);
     transform: scale(1, 1) translateY(0);
-  }
-}
-
-@-webkit-keyframes fa-fade {
-  50% {
-    opacity: var(--fa-fade-opacity, 0.4);
   }
 }
 
@@ -56033,57 +56494,21 @@ print {
   }
 }
 
-@-webkit-keyframes fa-beat-fade {
-
-  0%,
-  100% {
-    opacity: var(--fa-beat-fade-opacity, 0.4);
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 1;
-    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
-    transform: scale(var(--fa-beat-fade-scale, 1.125));
-  }
-}
-
 @keyframes fa-beat-fade {
-
   0%,
   100% {
     opacity: var(--fa-beat-fade-opacity, 0.4);
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 
   50% {
     opacity: 1;
-    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
     transform: scale(var(--fa-beat-fade-scale, 1.125));
-  }
-}
-
-@-webkit-keyframes fa-flip {
-  50% {
-    -webkit-transform: rotate3d(var(--fa-flip-x, 0),
-        var(--fa-flip-y, 1),
-        var(--fa-flip-z, 0),
-        var(--fa-flip-angle, -180deg));
-    transform: rotate3d(var(--fa-flip-x, 0),
-        var(--fa-flip-y, 1),
-        var(--fa-flip-z, 0),
-        var(--fa-flip-angle, -180deg));
   }
 }
 
 @keyframes fa-flip {
   50% {
-    -webkit-transform: rotate3d(var(--fa-flip-x, 0),
-        var(--fa-flip-y, 1),
-        var(--fa-flip-z, 0),
-        var(--fa-flip-angle, -180deg));
     transform: rotate3d(var(--fa-flip-x, 0),
         var(--fa-flip-y, 1),
         var(--fa-flip-z, 0),
@@ -56091,163 +56516,83 @@ print {
   }
 }
 
-@-webkit-keyframes fa-shake {
-  0% {
-    -webkit-transform: rotate(-15deg);
-    transform: rotate(-15deg);
-  }
-
-  4% {
-    -webkit-transform: rotate(15deg);
-    transform: rotate(15deg);
-  }
-
-  8%,
-  24% {
-    -webkit-transform: rotate(-18deg);
-    transform: rotate(-18deg);
-  }
-
-  12%,
-  28% {
-    -webkit-transform: rotate(18deg);
-    transform: rotate(18deg);
-  }
-
-  16% {
-    -webkit-transform: rotate(-22deg);
-    transform: rotate(-22deg);
-  }
-
-  20% {
-    -webkit-transform: rotate(22deg);
-    transform: rotate(22deg);
-  }
-
-  32% {
-    -webkit-transform: rotate(-12deg);
-    transform: rotate(-12deg);
-  }
-
-  36% {
-    -webkit-transform: rotate(12deg);
-    transform: rotate(12deg);
-  }
-
-  40%,
-  100% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-}
-
 @keyframes fa-shake {
   0% {
-    -webkit-transform: rotate(-15deg);
     transform: rotate(-15deg);
   }
 
   4% {
-    -webkit-transform: rotate(15deg);
     transform: rotate(15deg);
   }
 
   8%,
   24% {
-    -webkit-transform: rotate(-18deg);
     transform: rotate(-18deg);
   }
 
   12%,
   28% {
-    -webkit-transform: rotate(18deg);
     transform: rotate(18deg);
   }
 
   16% {
-    -webkit-transform: rotate(-22deg);
     transform: rotate(-22deg);
   }
 
   20% {
-    -webkit-transform: rotate(22deg);
     transform: rotate(22deg);
   }
 
   32% {
-    -webkit-transform: rotate(-12deg);
     transform: rotate(-12deg);
   }
 
   36% {
-    -webkit-transform: rotate(12deg);
     transform: rotate(12deg);
   }
 
   40%,
   100% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-  }
-}
-
-@-webkit-keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
   }
 }
 
 @keyframes fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 
   100% {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
 
 .fa-rotate-90 {
-  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .fa-rotate-180 {
-  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 .fa-rotate-270 {
-  -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
 .fa-flip-horizontal {
-  -webkit-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 
 .fa-flip-vertical {
-  -webkit-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 
 .fa-flip-both,
 .fa-flip-horizontal.fa-flip-vertical {
-  -webkit-transform: scale(-1, -1);
   transform: scale(-1, -1);
 }
 
 .fa-rotate-by {
-  -webkit-transform: rotate(var(--fa-rotate-angle, none));
   transform: rotate(var(--fa-rotate-angle, none));
 }
 
@@ -64116,6 +64461,7 @@ print {
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2022 Fonticons, Inc.
  */
+
 :root,
 :host {
   --fa-style-family-classic: "Font Awesome 6 Free";
@@ -64124,9 +64470,13 @@ print {
 
 @font-face {
   font-family: "Font Awesome 6 Free";
+
   font-style: normal;
+
   font-weight: 400;
+
   font-display: block;
+
   src: url(assets/fa-regular-400.woff2) format("woff2"),
     url(assets/fa-regular-400.ttf) format("truetype");
 }
@@ -64141,6 +64491,7 @@ print {
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2022 Fonticons, Inc.
  */
+
 :root,
 :host {
   --fa-style-family-classic: "Font Awesome 6 Free";
@@ -64149,9 +64500,13 @@ print {
 
 @font-face {
   font-family: "Font Awesome 6 Free";
+
   font-style: normal;
+
   font-weight: 900;
+
   font-display: block;
+
   src: url(assets/fa-solid-900.woff2) format("woff2"),
     url(assets/fa-solid-900.ttf) format("truetype");
 }
@@ -64166,6 +64521,7 @@ print {
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2022 Fonticons, Inc.
  */
+
 :root,
 :host {
   --fa-style-family-brands: "Font Awesome 6 Brands";
@@ -64174,9 +64530,13 @@ print {
 
 @font-face {
   font-family: "Font Awesome 6 Brands";
+
   font-style: normal;
+
   font-weight: 400;
+
   font-display: block;
+
   src: url(assets/fa-brands-400.woff2) format("woff2"),
     url(assets/fa-brands-400.ttf) format("truetype");
 }
@@ -66265,8 +66625,10 @@ print {
 
 .view>p:first-child img:only-child {
   border-radius: 0.5em;
-  object-fit: cover;
-  object-position: 0 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 50%;
+     object-position: 0 50%;
   max-height: 20em;
   width: 100%;
   transition: max-height 0.5s;
@@ -66352,7 +66714,8 @@ print {
 
 .view input[type="checkbox"] {
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   background-color: var(--form-background);
   margin: 0 0.3em 0 0;
   font: inherit;
@@ -66370,7 +66733,8 @@ print {
   content: "";
   width: 0.65em;
   height: 0.65em;
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+          clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   transform: scale(0);
   transform-origin: bottom left;
   transition: 120ms transform ease-in-out;
