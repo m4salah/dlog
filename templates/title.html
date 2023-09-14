@@ -1,26 +1,26 @@
-<div class="is-flex is-full is-align-items-center is-justify-content-space-between pt-5">
-  <div>
-    <a class="icon-text title is-5 pt-2" href="/">
-      <span class="icon"><img alt="logo" src="/public/logo.png" /></span>
-      <span>{{.SITENAME}}</span>
-    </a>
+<nav class="mb-8 flex border-b py-5">
+  <div class="m-auto flex w-full max-w-screen-lg items-center justify-between px-3">
+    <div class="flex h-fit items-center justify-between gap-2 text-left">
+      <a href="/" class="flex items-center text-xl gap-1 font-bold text-inherit">
+        <img alt="logo" src="/public/logo.png" class="icon" />
+        <span>{{.SITENAME}}</span>
+      </a>
+    </div>
+
+    {{ if .page }} {{ with widgets "search" .page }}
+    <div class="column is-4">{{ . }}</div>
+    {{ end }} {{ end }}
+
+    <div class="flex h-fit items-center justify-end gap-3 text-xl">
+      <a target="_blank" class="text-inherit" href="https://github.com/m4salah"><i class="fa-brands fa-github"></i></a>
+      <a target="_blank" class="text-inherit" href="https://linkedin.com/in/mohamed-a-salah"><i
+          class="fa-brands fa-linkedin"></i></a>
+      <a target="_blank" class="text-inherit" href="https://x.com/msalah1337"><i class="fa-brands fa-twitter"></i></a>
+      <a target="_blank" class="text-inherit" href="mailto:me@msalah.net"><i class="fa-solid fa-envelope"></i></a>
+    </div>
   </div>
-
-  {{ if .page }}
-  {{ with widgets "search" .page }}
-  <div class="column is-4"> {{ . }} </div>
-  {{ end }}
-  {{ end }}
-
-  <ul class="is-flex is-8">
-    <li class="fa-brands fa-github ml-2" />
-    <li class="fa-brands fa-linkedin ml-2" />
-    <li class="fa-solid fa-envelope ml-2" />
-    <li class="fa-brands fa-twitter ml-2" />
-  </ul>
-</div>
-<hr />
+</nav>
 
 {{ if ne .INDEX .page.Name }}
-<div dir="auto" class="title is-1 has-text-weight-bold">{{ .title }}</div>
+<div dir="auto" class="font-bold text-4xl max-w-screen-lg w-full m-auto px-3">{{ .title }}</div>
 {{ end }}

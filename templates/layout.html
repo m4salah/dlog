@@ -1,52 +1,88 @@
 {{- define "header" -}}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="icon" href="/public/logo.png">
-    <link rel="stylesheet" href="/public/style.css">
-    <title>{{.title}} | {{.SITENAME}}</title>
-    {{ if .page }} {{ widgets "head" .page }} {{ end }}
-  </head>
-  <body>
 
-    {{ template "commands" . }}
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <link rel="icon" href="/public/logo.png">
+  <link rel="stylesheet" href="/public/css/tailwind.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <title>{{.title}} | {{.SITENAME}}</title>
+  {{ if .page }} {{ widgets "head" .page }} {{ end }}
+</head>
 
-    <div class="container is-max-desktop px-3" dir="auto" style="margin-bottom: 50vh;">
-      {{ template "title" . }}
-      <div class="content">
-        {{ end }}
-        {{define "footer" }}
-      </div>
+<body>
 
+  {{ template "commands" . }}
 
-      {{ if .page }}
-      <footer class="mt-6 p-3 py-5">
-        <hr/>
-
-        <nav class="breadcrumb has-bullet-separator">
-          <ul>
-            {{ range $i, $a := links .page }}
-
-            <li>
-              <a href="{{.Link}}" class="icon-text has-text-grey-dark">
-                <span class="icon">
-                  {{ $icon := .Icon }}
-                  {{ if isFontAwesome $icon }} <i class="{{.Icon}}"></i> {{ else }} {{ $icon }} {{ end }}
-                </span>
-                <span>{{.Name}}</span>
-              </a>
-            </li>
-
-            {{ end }}
-          </ul>
-        </nav>
-
-      </footer>
+  <div dir="auto">
+    {{ template "title" . }}
+    <div class="content content max-w-screen-lg w-full m-auto px-3">
       {{ end }}
-
+      {{define "footer" }}
     </div>
-  </body>
+
+
+    {{ if .page }}
+    <footer class="mt-6 max-w-screen-lg w-full m-auto">
+      <hr />
+
+      <nav class="px-3">
+        <ul class="flex gap-3">
+          <!-- {{ range $i, $a := links .page }}
+
+          <li>
+            <a target="_blank" href="{{.Link}}" class="icon-text has-text-grey-dark">
+              <span class="icon">
+                {{ $icon := .Icon }}
+                {{ if isFontAwesome $icon }} <i class="{{.Icon}}"></i> {{ else }} {{ $icon }} {{ end }}
+              </span>
+              <span>{{.Name}}</span>
+            </a>
+          </li>
+
+          {{ end }} -->
+          <li>
+            <a target="_blank" href="https://github.com/m4salah" class="icon-text text-inherit">
+              <span class="icon">
+                <i class="fa-brands fa-github"></i>
+              </span>
+              <span>Github</span>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://linkedin.com/in/mohamed-a-salah" class="icon-text text-inherit">
+              <span class="icon">
+                <i class="fa-brands fa-linkedin"></i>
+              </span>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://x.com/msalah1337" class="icon-text text-inherit">
+              <span class="icon">
+                <i class="fa-brands fa-twitter"></i>
+              </span>
+              <span>Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:me@msalah.net" class="icon-text text-inherit">
+              <span class="icon">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              <span>Email</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </footer>
+    {{ end }}
+
+  </div>
+</body>
+
 </html>
 {{ end }}
