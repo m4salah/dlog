@@ -16,66 +16,68 @@
 
   {{ template "commands" . }}
 
-  <div dir="auto">
+  <div dir="auto" class="mb-6">
     {{ template "title" . }}
-    <div class="content content max-w-screen-lg w-full m-auto px-3">
+    <div class="content max-w-screen-lg w-full m-auto px-3">
       {{ end }}
       {{define "footer" }}
     </div>
 
 
     {{ if .page }}
-    <footer class="mt-6 max-w-screen-lg w-full m-auto">
-      <hr />
+    <footer class="mt-6">
+      <nav class="px-3 border-t pt-3 w-full">
+        <div class="flex gap-3 mx-6 max-w-screen-lg w-full m-auto">
+          <ul class="flex-col gap-2">
+            {{ range $i, $a := links .page }}
 
-      <nav class="px-3">
-        <ul class="flex gap-3">
-          <!-- {{ range $i, $a := links .page }}
+            <li>
+              <a target="_blank" href="{{.Link}}" class="icon-text text-inherit">
+                <span class="icon">
+                  {{ $icon := .Icon }}
+                  {{ if isFontAwesome $icon }} <i class="{{.Icon}}"></i> {{ else }} {{ $icon }} {{ end }}
+                </span>
+                <span>{{.Name}}</span>
+              </a>
+            </li>
 
-          <li>
-            <a target="_blank" href="{{.Link}}" class="icon-text has-text-grey-dark">
-              <span class="icon">
-                {{ $icon := .Icon }}
-                {{ if isFontAwesome $icon }} <i class="{{.Icon}}"></i> {{ else }} {{ $icon }} {{ end }}
-              </span>
-              <span>{{.Name}}</span>
-            </a>
-          </li>
-
-          {{ end }} -->
-          <li>
-            <a target="_blank" href="https://github.com/m4salah" class="icon-text text-inherit">
-              <span class="icon">
-                <i class="fa-brands fa-github"></i>
-              </span>
-              <span>Github</span>
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://linkedin.com/in/mohamed-a-salah" class="icon-text text-inherit">
-              <span class="icon">
-                <i class="fa-brands fa-linkedin"></i>
-              </span>
-              <span>LinkedIn</span>
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://x.com/msalah1337" class="icon-text text-inherit">
-              <span class="icon">
-                <i class="fa-brands fa-twitter"></i>
-              </span>
-              <span>Twitter</span>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:me@msalah.net" class="icon-text text-inherit">
-              <span class="icon">
-                <i class="fa-solid fa-envelope"></i>
-              </span>
-              <span>Email</span>
-            </a>
-          </li>
-        </ul>
+            {{ end }}
+          </ul>
+          <ul class="flex-col gap-2">
+            <li>
+              <a target="_blank" href="https://github.com/m4salah" class="icon-text text-inherit">
+                <span class="icon">
+                  <i class="fa-brands fa-github"></i>
+                </span>
+                <span>Github</span>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="https://linkedin.com/in/mohamed-a-salah" class="icon-text text-inherit">
+                <span class="icon">
+                  <i class="fa-brands fa-linkedin"></i>
+                </span>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="https://x.com/msalah1337" class="icon-text text-inherit">
+                <span class="icon">
+                  <i class="fa-brands fa-twitter"></i>
+                </span>
+                <span>Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:me@msalah.net" class="icon-text text-inherit">
+                <span class="icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <span>Email</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
 
     </footer>
